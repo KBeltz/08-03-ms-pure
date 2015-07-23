@@ -1,4 +1,4 @@
-# Bicycle/Pedestrian Count Application
+# ModeShift Bike/Ped Counter
 
 According to the [National Bicycle and Pedestrian Documentation Project](http://www.bikepeddocumentation.org), "One of the greatest challenges facing the bicycle and pedestrian field is the lack of documentation of usage and demand. Without accurate and consistent demand and usage figures, it is difficult to measure the positive benefits of investments in these modes, especially when compared to the other transportation modes such as the private automobile."
 
