@@ -28,8 +28,9 @@
     <%= f.check_box :admin %>
   </div>
   <div class="field">
-    <%= f.label :location_id %><br>
-    <%= f.number_field :location_id %>
+
+    <%= f.select(:location_id, locations_for_select, :prompt => 'Select') %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
