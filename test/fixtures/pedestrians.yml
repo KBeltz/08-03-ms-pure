@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  female: 1
+  male: 1
+  disabled: 1
+  other: 1
+
+two:
+  female: 1
+  male: 1
+  disabled: 1
+  other: 1

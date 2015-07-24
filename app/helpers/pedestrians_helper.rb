@@ -1,0 +1,2 @@
+module PedestriansHelper
+end
