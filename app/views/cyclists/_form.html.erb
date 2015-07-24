@@ -1,0 +1,49 @@
+<%= form_for(@cyclist) do |f| %>
+  <% if @cyclist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cyclist.errors.count, "error") %> prohibited this cyclist from being saved:</h2>
+
+      <ul>
+      <% @cyclist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :female_with_helmet %><br>
+    <%= f.number_field :female_with_helmet %>
+  </div>
+  <div class="field">
+    <%= f.label :female_no_helmet %><br>
+    <%= f.number_field :female_no_helmet %>
+  </div>
+  <div class="field">
+    <%= f.label :female_sidewalk %><br>
+    <%= f.number_field :female_sidewalk %>
+  </div>
+  <div class="field">
+    <%= f.label :female_wrong_way %><br>
+    <%= f.number_field :female_wrong_way %>
+  </div>
+  <div class="field">
+    <%= f.label :male_with_helmet %><br>
+    <%= f.number_field :male_with_helmet %>
+  </div>
+  <div class="field">
+    <%= f.label :male_no_helmet %><br>
+    <%= f.number_field :male_no_helmet %>
+  </div>
+  <div class="field">
+    <%= f.label :male_sidewalk %><br>
+    <%= f.number_field :male_sidewalk %>
+  </div>
+  <div class="field">
+    <%= f.label :male_wrong_way %><br>
+    <%= f.number_field :male_wrong_way %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

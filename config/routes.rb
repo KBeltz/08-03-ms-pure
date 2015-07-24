@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cyclists
   resources :pedestrians
   resources :locations
   resources :users
