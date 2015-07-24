@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root 'users#login'
   get "/login" => "users#login"
 
   post "/authenticate_login" => "users#authenticate_login"
