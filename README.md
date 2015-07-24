@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #Bicycle/Pedestrian Count Application
 
 According to the [National Bicycle and Pedestrian Documentation Project](bikepeddocumentation.org), "One of the greatest challenges facing the bicycle and pedestrian field is the lack of documentation of usage and demand. Without accurate and consistent demand and usage figures, it is difficult to measure the positive benefits of investments in these modes, especially when compared to the other transportation modes such as the private automobile."
@@ -63,4 +62,3 @@ Needs
 2. Two static information pages available within each user profile:
   * Instructions and contact information
   * Map of the specific location where the user signed up to count 
->>>>>>> 41cdc84432b3d0507f217f42998985aba8392a63
