@@ -10,4 +10,15 @@ module UsersHelper
       redirect "/login"
     end
   end
+
+  # verifies the admin status
+  #
+  # returns boolean
+  def admin_user
+    if @user.admin
+      return true
+    else
+      redirect "/index"
+    end
+  end
 end
