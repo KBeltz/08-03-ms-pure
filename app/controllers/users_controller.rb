@@ -51,7 +51,9 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    email = params["user"]["email"]
+    password = BCrypt::Password.create(params["user"]["password"])
+    @user = User.new({"username" => params["user"]["username"], "email" => params["user"]["email"], "password" => password, "admin" => params["user"]["password"], "location_id" => params["user"]["location_id"]})
 
     respond_to do |format|
       if @user.save
