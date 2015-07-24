@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  get "/login" => "users#login"
+
+  post "/authenticate_login" => "users#authenticate_login"
+
   resources :cyclists
   resources :pedestrians
   resources :locations
