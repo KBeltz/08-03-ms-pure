@@ -7,12 +7,12 @@ class UsersController < ApplicationController
 
   # Post /authenticate_login
   def authenticate_login
-    entered_email = params["users"]["email"]
+    entered_email = params["user"]["email"]
     @user_email = User.find_by(email: entered_email)
 
     if !@user_email.nil?
       @valid = true
-      given_pw = params["users"]["password"]
+      given_pw = params["user"]["password"]
       actual_pw = BCrypt::Password.new(@user_email.password)
       if actual_pw == given_pw
         session[:user_id] = @user_email.id
@@ -51,7 +51,9 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    email = params["user"]["email"]
+    password = BCrypt::Password.create(params["user"]["password"])
+    @user = User.new({"username" => params["user"]["username"], "email" => params["user"]["email"], "password" => password, "admin" => params["user"]["password"], "location_id" => params["user"]["location_id"]})
 
     respond_to do |format|
       if @user.save
