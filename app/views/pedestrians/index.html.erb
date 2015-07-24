@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pedestrians</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Disabled</th>
+      <th>Other</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pedestrians.each do |pedestrian| %>
+      <tr>
+        <td><%= pedestrian.female %></td>
+        <td><%= pedestrian.male %></td>
+        <td><%= pedestrian.disabled %></td>
+        <td><%= pedestrian.other %></td>
+        <td><%= link_to 'Show', pedestrian %></td>
+        <td><%= link_to 'Edit', edit_pedestrian_path(pedestrian) %></td>
+        <td><%= link_to 'Destroy', pedestrian, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pedestrian', new_pedestrian_path %>
