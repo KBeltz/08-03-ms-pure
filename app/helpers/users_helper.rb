@@ -7,7 +7,7 @@ module UsersHelper
       @user = User.find(session[:user_id].to_i)
     else
       session.clear
-      redirect "/login"
+      redirect_to "/login"
     end
   end
 
@@ -18,7 +18,7 @@ module UsersHelper
     if @user.admin
       return true
     else
-      redirect "/index"
+      redirect_to "/index" # redirects back to the user's home screen
     end
   end
 end
