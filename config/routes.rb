@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   post "/authenticate_login" => "users#authenticate_login"
 
+  get "/instructions" => "users#instructions"
+
   resources :cyclists
   resources :pedestrians
   resources :locations

@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   def create
     email = params["user"]["email"]
     password = BCrypt::Password.create(params["user"]["password"])
-    @user = User.new({"username" => params["user"]["username"], "email" => params["user"]["email"], "password" => password, "admin" => params["user"]["password"], "location_id" => params["user"]["location_id"]})
+    @user = User.new({"username" => params["user"]["username"], "email" => email, "password" => password, "admin" => params["user"]["password"], "location_id" => params["user"]["location_id"]})
 
     respond_to do |format|
       if @user.save
@@ -92,6 +92,9 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def instructions
   end
 
   private
