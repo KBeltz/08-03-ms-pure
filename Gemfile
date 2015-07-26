@@ -24,6 +24,20 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# The administration framework for Ruby on Rails.
+gem 'activeadmin', '~> 1.0.0.pre1'
+# An Object Oriented DOM Tree in Ruby
+gem 'arbre', '~> 1.0.3'
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 3.5.1'
+# A Rails form builder plugin/gem with semantically rich and accessible markup
+gem 'formtastic', '~> 3.1.3'
+# Inherited Resources speeds up development by making your controllers inherit all restful actions so you just have to focus on what is important.
+gem 'inherited_resources', '~> 1.6.0'
+# Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator for Rails 3+
+gem 'kaminari', '~> 0.16.3'
+# Ransack is the successor to the MetaSearch gem. It improves and expands upon MetaSearch's functionality, but does not have a 100%-compatible API.
+gem 'ransack', '~> 1.6.6'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
