@@ -16,14 +16,14 @@ class UsersController < ApplicationController
       actual_pw = BCrypt::Password.new(@user_email.password)
       if actual_pw == given_pw
         session[:user_id] = @user_email.id
-        render "users/show"
+        render "show"
       else
         @valid = false
-        render "users/login"
+        render "login"
       end
     else
       @valid = false
-      render "users/login"
+      render "login"
     end
   end
 
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   def create
     email = params["user"]["email"]
     password = BCrypt::Password.create(params["user"]["password"])
-    @user = User.new({"username" => params["user"]["username"], "email" => email, "password" => password, "admin" => params["user"]["password"], "location_id" => params["user"]["location_id"]})
+    @user = User.new({"username" => params["user"]["username"], "email" => email, "password" => password, "admin" => params["user"]["admin"], "location_id" => params["user"]["location_id"]})
 
     respond_to do |format|
       if @user.save
@@ -70,7 +70,14 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      @user.username = params["user"]["username"]
+      @user.email = params["user"]["email"]
+      password = BCrypt::Password.create(params["user"]["password"])
+      @user.password = password
+      @user.admin = params["user"]["admin"]
+      @user.location_id = params["user"]["location_id"]
+
+      if @user.save
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
