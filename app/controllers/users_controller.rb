@@ -16,11 +16,7 @@ class UsersController < ApplicationController
       actual_pw = BCrypt::Password.new(@user_email.password)
       if actual_pw == given_pw
         session[:user_id] = @user_email.id
-          if @user_email.admin_user
-            render "users/index"
-          else
-            render "users/show"
-          end
+        render "users/show"
       else
         @valid = false
         render "users/login"
