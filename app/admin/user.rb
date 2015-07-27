@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  menu priority: 3
+  menu priority: 3, label: "Volunteers"
   permit_params :username, :email, :password, :location_id
 
   index do
