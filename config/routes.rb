@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root 'users#login'
-  get "/login" => "users#login"
+  root 'users#index'
+  get "/login" => "users#index"
 
   post "/authenticate_login" => "users#authenticate_login"
 
