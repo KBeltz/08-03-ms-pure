@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  menu priority: 3
+  menu priority: 3, label: "Volunteers"
   permit_params :username, :email, :password, :location_id
 
   index do
@@ -14,6 +14,20 @@ ActiveAdmin.register User do
     # reinstates default actions that are removed when a view is customized
     actions
   end
+
+  form do |f|
+    f.inputs "Volunteer Details" do
+      f.input :username
+      f.input :email
+      f.input :location_id
+      if f.object.new_record?
+        f.input :password
+        f.input :password_confirmation
+      end
+    end
+    f.button :Submit
+  end
+
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
