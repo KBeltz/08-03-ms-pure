@@ -1,6 +1,12 @@
 ActiveAdmin.register Location do
   permit_params :location_name, :url
 
+  index do
+    column :location_name
+    column "Map Link", :url
+    # reinstates default actions that are removed when a view is customized
+    actions
+  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
