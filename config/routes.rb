@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get "/instructions" => "users#instructions"
 
+  get "/weather" => "weathers#index"
+
   resources :cyclists
   resources :pedestrians
   resources :locations
