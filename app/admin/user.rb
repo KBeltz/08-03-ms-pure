@@ -15,10 +15,11 @@ ActiveAdmin.register User do
     id_column
     column :username
     column :email
-    column "Location", :location_id, :location_id do |i|
-      @location = Location.find(i)
-      @location.location_name
-    end
+    column "Location", :location_id
+    # , :location_id do |i|
+    #   @location = Location.find(i)
+    #   @location.location_name
+    # end
     # reinstates default actions that are removed when a view is customized
     actions
   end

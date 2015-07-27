@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/login" => "users#index"
 
   post "/authenticate_login" => "users#authenticate_login"
+  post "/admin/users" => "users#authenticate_login"
 
   get "/instructions" => "users#instructions"
 
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :users
   resources :shifts
+  resources :admin_users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

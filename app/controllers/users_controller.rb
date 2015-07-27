@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   # Post /authenticate_login
   def authenticate_login
     entered_email = params["user"]["email"]
-    @user_email = User.find_by(email: entered_email)
+    @user = User.find_by(email: entered_email)
 
     if !@user_email.nil?
       @valid = true
