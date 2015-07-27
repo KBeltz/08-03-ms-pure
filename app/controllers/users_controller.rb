@@ -8,14 +8,14 @@ class UsersController < ApplicationController
   # Post /authenticate_login
   def authenticate_login
     entered_email = params["user"]["email"]
-    @user_email = User.find_by(email: entered_email)
+    @user = User.find_by(email: entered_email)
 
-    if !@user_email.nil?
+    if !@user.nil?
       @valid = true
       given_pw = params["user"]["password"]
-      actual_pw = BCrypt::Password.new(@user_email.password)
+      actual_pw = BCrypt::Password.new(@user.password)
       if actual_pw == given_pw
-        session[:user_id] = @user_email.id
+        session[:user_id] = @user.id
         render "show"
       else
         @valid = false
