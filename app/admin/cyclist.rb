@@ -12,6 +12,7 @@ ActiveAdmin.register Cyclist do
     column :male_no_helmet
     column :male_sidewalk
     column :male_wrong_way
+    actions 
   end
 
 
