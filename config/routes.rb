@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/login" => "users#index"
 
   post "/authenticate_login" => "users#authenticate_login"
-  post "/admin/users" => "users#authenticate_login"
+  # post "/admin/users" => "users#authenticate_login"
 
   get "/instructions" => "users#instructions"
 
