@@ -10,13 +10,13 @@ class UsersController < ApplicationController
     entered_email = params["user"]["email"]
     @user = User.find_by(email: entered_email)
 
-    if !@user_email.nil?
+    if !@user.nil?
       @valid = true
       given_pw = params["user"]["password"]
-      actual_pw = BCrypt::Password.new(@user_email.password)
+      actual_pw = BCrypt::Password.new(@user.password)
       if actual_pw == given_pw
-        session[:user_id] = @user_email.id
-        render "show"
+        session[:user_id] = @user.id
+        redirect_to user_path(session[:user_id])
       else
         @valid = false
         render "login"
@@ -54,6 +54,8 @@ class UsersController < ApplicationController
     email = params["user"]["email"]
     password = BCrypt::Password.create(params["user"]["password"])
     @user = User.new({"username" => params["user"]["username"], "email" => email, "password" => password, "location_id" => params["user"]["location_id"]})
+
+
 
     respond_to do |format|
       if @user.save

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   get "/weather" => "weathers#index"
 
+  get "/user" => "users#show", :as => "profile"
+
+
   resources :cyclists
   resources :pedestrians
   resources :locations
