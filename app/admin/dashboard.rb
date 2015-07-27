@@ -11,12 +11,38 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     columns do
+
       column do
         panel "Info" do
           para "Welcome to ActiveAdmin."
         end
       end
     end
+
+      section "Recent Cyclist Data" do
+        table_for Cyclist.order("created_at desc").limit(5) do
+          column :female_with_helmet
+          column :female_no_helmet
+          column :female_sidewalk
+          column :female_wrong_way
+          column :male_with_helmet
+          column :male_no_helmet
+          column :male_sidewalk
+          column :male_wrong_way
+        end
+      end
+
+      section "Recent Pedestrian Data" do
+        table_for Pedestrian.order("created_at desc").limit(5) do
+          column :female
+          column :male
+          column :disabled
+          column :other
+        end
+      end
+
+
+
 
     # Here is an example of a simple dashboard with columns and panels.
     #
