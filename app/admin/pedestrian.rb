@@ -1,4 +1,6 @@
 ActiveAdmin.register Pedestrian do
+  actions :all, except: [:create, :edit, :destroy]
+
   permit_params :female, :male, :disabled, :other
 
 
