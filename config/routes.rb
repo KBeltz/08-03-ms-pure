@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :shifts
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'users#login'
