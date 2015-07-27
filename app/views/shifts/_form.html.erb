@@ -13,18 +13,15 @@
 
   <div class="field">
     <%= f.label :user_id %><br>
-    <% User.all.each do |user| %>
-      <%= f.select_tag(:user_id, options_for_select([user.username, user.id])) %>
-
-    <% end %>
+    <%= f.select("user_id", User.all.collect {|u| [ u.username, u.id ] }, { include_blank: false }) %>
   </div>
   <div class="field">
     <%= f.label :location_id %><br>
-    <%= f.number_field :location_id %>
+    <%= f.select("location_id", Location.all.collect {|l| [ l.location_name, l.id ] }, { include_blank: false }) %>
   </div>
   <div class="field">
     <%= f.label :weather_id %><br>
-    <%= f.number_field :weather_id %>
+    <%= f.select("weather_id", Weather.all.collect {|w| [ w.weather, w.id ] }, { include_blank: false }) %>
   </div>
   <div class="field">
     <%= f.label :time %><br>
