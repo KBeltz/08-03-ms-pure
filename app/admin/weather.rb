@@ -1,18 +1,6 @@
-ActiveAdmin.register Location do
-  menu priority: 4
-  permit_params :location_name, :url
+ActiveAdmin.register Weather do
+  permit_params :weather
 
-  filter :location_name
-  filter :url
-
-  index do
-    selectable_column
-    id_column
-    column :location_name
-    column "Map Link", :url
-    # reinstates default actions that are removed when a view is customized
-    actions
-  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

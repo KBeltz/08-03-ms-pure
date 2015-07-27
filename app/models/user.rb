@@ -16,4 +16,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
   validates :location_id, presence: true
+
+  has_many :shifts
 end

@@ -1,0 +1,19 @@
+<h1>Listing Weather</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Weather</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weather.each do |weather| %>
+      <tr>
+        <td><%= weather.id %></td>
+        <td><%= weather.weather %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
