@@ -13,7 +13,10 @@
 
   <div class="field">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <% User.all.each do |user| %>
+      <%= f.select_tag(:user_id, options_for_select([user.username, user.id])) %>
+
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :location_id %><br>

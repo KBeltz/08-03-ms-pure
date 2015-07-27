@@ -12,4 +12,5 @@
 #
 
 class Pedestrian < ActiveRecord::Base
+  belongs_to :shifts
 end
