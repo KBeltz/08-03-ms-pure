@@ -2,6 +2,8 @@ ActiveAdmin.register Location do
   permit_params :location_name, :url
 
   index do
+    selectable_column
+    id_column
     column :location_name
     column "Map Link", :url
     # reinstates default actions that are removed when a view is customized
