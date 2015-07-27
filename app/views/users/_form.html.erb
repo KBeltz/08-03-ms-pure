@@ -23,10 +23,7 @@
     <%= f.label :password %><br>
     <%= f.password_field :password, :required => true %>
   </div>
-  <div class="field">
-    <%= f.label :admin %><br>
-    <%= f.check_box :admin %>
-  </div>
+
   <div class="field">
 
     <%= f.select(:location_id, locations_for_select, :prompt => 'Select', :required => true) %>
