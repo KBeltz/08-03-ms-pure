@@ -1,4 +1,5 @@
 ActiveAdmin.register Location do
+  permit_params :location_name, :url
 
 
   # See permitted parameters documentation:
