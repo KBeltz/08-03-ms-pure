@@ -2,6 +2,8 @@ ActiveAdmin.register User do
   permit_params :username, :email, :password, :location_id
 
   index do
+    selectable_column
+    id_column
     column :username
     column :email
     column "Location", :location_id
