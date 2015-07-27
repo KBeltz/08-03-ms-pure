@@ -10,14 +10,15 @@
   <%= @user.email %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Admin:</strong>
   <%= @user.admin %>
-</p>
+</p> -->
 
 <p>
   <strong>Location:</strong>
   <%= @user.location_id %>
+  <!-- Put location name here, not the id -->
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

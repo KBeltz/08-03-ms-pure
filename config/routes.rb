@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root 'users#login'
   get "/login" => "users#login"
 
   post "/authenticate_login" => "users#authenticate_login"
+
+  get "/instructions" => "users#instructions"
 
   resources :cyclists
   resources :pedestrians

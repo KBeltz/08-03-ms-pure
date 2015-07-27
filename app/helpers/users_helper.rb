@@ -7,18 +7,7 @@ module UsersHelper
       @user = User.find(session[:user_id].to_i)
     else
       session.clear
-      redirect "/login"
-    end
-  end
-
-  # verifies the admin status
-  #
-  # returns boolean
-  def admin_user
-    if @user.admin
-      return true
-    else
-      redirect "/index"
+      redirect_to "/login"
     end
   end
 end
