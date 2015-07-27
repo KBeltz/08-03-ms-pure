@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       actual_pw = BCrypt::Password.new(@user.password)
       if actual_pw == given_pw
         session[:user_id] = @user.id
-        redirect_to "show"
+        redirect_to user_path(session[:user_id])
       else
         @valid = false
         render "login"
