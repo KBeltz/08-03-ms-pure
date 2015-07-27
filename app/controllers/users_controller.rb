@@ -77,7 +77,6 @@ class UsersController < ApplicationController
       @user.email = params["user"]["email"]
       password = BCrypt::Password.create(params["user"]["password"])
       @user.password = password
-      @user.admin = params["user"]["admin"]
       @user.location_id = params["user"]["location_id"]
 
       if @user.save
