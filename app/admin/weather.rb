@@ -1,4 +1,5 @@
 ActiveAdmin.register Weather do
+  permit_params :weather
 
 
   # See permitted parameters documentation:
