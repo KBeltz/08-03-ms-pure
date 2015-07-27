@@ -1,4 +1,5 @@
 ActiveAdmin.register Location do
+  menu priority: 4
   permit_params :location_name, :url
 
   index do
