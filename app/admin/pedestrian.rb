@@ -1,4 +1,5 @@
 ActiveAdmin.register Pedestrian do
+  permit_params :female, :male, :disabled, :other
 
 
   # See permitted parameters documentation:
