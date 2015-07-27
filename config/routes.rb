@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :shifts
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'users#login'
@@ -16,6 +15,7 @@ Rails.application.routes.draw do
   resources :pedestrians
   resources :locations
   resources :users
+  resources :shifts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
