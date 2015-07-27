@@ -1,6 +1,13 @@
 ActiveAdmin.register User do
   permit_params :username, :email, :password, :location_id
 
+  index do
+    column :username
+    column :email
+    column "Location", :location_id
+    # reinstates default actions that are removed when a view is customized
+    actions
+  end
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
