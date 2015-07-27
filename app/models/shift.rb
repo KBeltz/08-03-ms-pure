@@ -6,10 +6,10 @@
 #  user_id     :integer
 #  location_id :integer
 #  weather_id  :integer
-#  time        :time
-#  date        :date
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  start_time  :datetime
+#  end_time    :datetime
 #
 
 class Shift < ActiveRecord::Base
