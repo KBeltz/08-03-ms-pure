@@ -2,6 +2,14 @@ ActiveAdmin.register User do
   menu priority: 3, label: "Volunteers"
   permit_params :username, :email, :password, :location_id
 
+  filter :username
+  filter :email
+  filter :location_id, as: :select
+
+  # index download_links: [:pdf]
+  # would actually need to implement the PDF rendering, but the
+  # types of downloads available can be customized
+
   index do
     selectable_column
     id_column

@@ -1,4 +1,5 @@
 ActiveAdmin.register Pedestrian do
+  menu parent: "Count Data"
   actions :all, except: [:create, :edit, :destroy, :new]
   batch_action :destroy, false
 
