@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       actual_pw = BCrypt::Password.new(@user.password)
       if actual_pw == given_pw
         session[:user_id] = @user.id
-        render "show"
+        redirect_to "show"
       else
         @valid = false
         render "login"
@@ -54,6 +54,8 @@ class UsersController < ApplicationController
     email = params["user"]["email"]
     password = BCrypt::Password.create(params["user"]["password"])
     @user = User.new({"username" => params["user"]["username"], "email" => email, "password" => password, "location_id" => params["user"]["location_id"]})
+
+
 
     respond_to do |format|
       if @user.save

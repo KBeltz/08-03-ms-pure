@@ -1,20 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="glyphicon glyphicon-road navbar-brand" rel="home" href=<%= login_path %>> Moving Omaha</a>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <div class="collapse navbar-collapse">
 
-<p>
-  <strong>Location:</strong>
-  <%= @user.location_id %>
-  <!-- Put location name here, not the id -->
-</p>
+    <ul class="nav navbar-nav">
+      <li><a href=<%= new_admin_user_session_path %>>Admin login</a></li>
+      <li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li>
+      <%= form_tag("/authenticate_login", method: "post", :class => "navbar-form form-inline pull-right") do %>
+          <input type="text" name="user[email]" placeholder="Email">
+          <input type="password" name="user[password]" placeholder="Password">
+          <button type="submit" class="btn btn-default">Log in</button>
+      <% end %>
+    </ul>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <div class="col-sm-3 col-md-3 pull-right">
+      <div class="navbar-text">Text</div>
+      <form class="navbar-form" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
