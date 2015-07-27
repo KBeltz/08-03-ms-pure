@@ -12,4 +12,5 @@
 class Location < ActiveRecord::Base
   validates :location_name, presence: true
   validates :url, presence: true
+  has_many :shifts
 end
