@@ -1,7 +1,15 @@
 ActiveAdmin.register Pedestrian do
-  actions :all, except: [:create, :edit, :destroy]
 
   permit_params :female, :male, :disabled, :other
+
+  index do
+    column :female
+    column :male
+    column :disabled
+    column :other
+    # reinstates default actions that are removed when a view is customized
+    actions :all, except: [:create, :edit, :destroy]
+  end
 
 
   # See permitted parameters documentation:
