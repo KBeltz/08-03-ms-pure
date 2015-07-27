@@ -13,8 +13,8 @@
 #
 
 class Shift < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :locations
+  belongs_to :user
+  belongs_to :location
   has_many :pedestrians
   has_many :cyclists
 end

@@ -16,5 +16,5 @@
 #
 
 class Cyclist < ActiveRecord::Base
-  belongs_to :shifts
+  belongs_to :shift
 end
