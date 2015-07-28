@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @location = Location.find(@user.location_id)
   end
 
   # GET /users/new
@@ -76,7 +77,6 @@ class UsersController < ApplicationController
       @user.email = params["user"]["email"]
       password = BCrypt::Password.create(params["user"]["password"])
       @user.password = password
-      @user.admin = params["user"]["admin"]
       @user.location_id = params["user"]["location_id"]
 
       if @user.save
