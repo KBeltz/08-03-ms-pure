@@ -1,4 +1,5 @@
 ActiveAdmin.register Shift do
+  menu priority: 5
   permit_params :user_id, :location_id, :weather_id, :time, :date
 
   # See permitted parameters documentation:
