@@ -3,7 +3,7 @@
 <p>
   <strong>User:</strong>
   <% user = User.find(@shift.user_id) %>
-  <%= user.username %>
+  <%= user.first_name %> <%= user.last_name %>
 </p>
 
 <p>
