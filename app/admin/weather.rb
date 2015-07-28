@@ -1,4 +1,5 @@
 ActiveAdmin.register Weather do
+  menu priority: 6, label: "Weather"
   permit_params :weather
 
 
