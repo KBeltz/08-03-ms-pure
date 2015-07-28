@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   def login
   end
 
+  # Get /logout
+  def logout
+    reset_session
+  end
+
   # Post /authenticate_login
   def authenticate_login
     entered_email = params["user"]["email"]
