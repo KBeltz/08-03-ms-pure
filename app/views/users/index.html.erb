@@ -27,12 +27,16 @@
     </ul>
 
     <div class="col-sm-4 col-md-4 pull-right">
-      <div class="navbar-text">Text</div>
+      <% if @user == false%>
       <%= form_tag(new_user_session_path, method: "post", :class => "navbar-form") do %>
           <input type="text" name="user[email]" placeholder="Email">
           <input type="password" name="user[password]" placeholder="Password">
           <button type="submit" class="btn btn-default">Log in</button>
       <% end %>
+          <% else  %>
+          <div class="navbar-text pull-right">Logged in as <%= @user.first_name %></div>
+
+          <% end  %>
     </div>
 
   </div>
