@@ -1,8 +1,9 @@
 ActiveAdmin.register User do
   menu priority: 3, label: "Volunteers"
-  permit_params :username, :email, :password, :location_id
+  permit_params :first_name, :last_name, :email, :password, :location_id
 
-  filter :username
+  filter :first_name
+  filter :last_name
   filter :email
   filter :location_id, as: :select
 
@@ -13,7 +14,8 @@ ActiveAdmin.register User do
   index do
     selectable_column
     id_column
-    column :username
+    column :first_name
+    column :last_name
     column :email
     column "Location", :location_id
     # , :location_id do |i|
@@ -26,7 +28,8 @@ ActiveAdmin.register User do
 
   form do |f|
     f.inputs "Volunteer Details" do
-      f.input :username
+      f.input :first_name
+      f.input :last_name
       f.input :email
       f.input :location_id
       if f.object.new_record?

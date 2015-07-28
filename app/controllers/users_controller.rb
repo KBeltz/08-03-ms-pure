@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   def create
     email = params["user"]["email"]
     password = BCrypt::Password.create(params["user"]["password"])
-    @user = User.new({"username" => params["user"]["username"], "email" => email, "password" => password, "location_id" => params["user"]["location_id"]})
+    @user = User.new({"first_name" => params["user"]["first_name"], "last_name" => params["user"]["last_name"], "email" => email, "password" => password, "location_id" => params["user"]["location_id"]})
 
 
 
@@ -73,7 +73,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      @user.username = params["user"]["username"]
+      @user.first_name = params["user"]["first_name"]
+      @user.last_name = params["user"]["last_name"]
       @user.email = params["user"]["email"]
       password = BCrypt::Password.create(params["user"]["password"])
       @user.password = password
@@ -110,6 +111,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :admin, :location_id)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :admin, :location_id)
     end
 end
