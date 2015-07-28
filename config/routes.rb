@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
   get "/weather" => "weathers#index"
 
-  get "/user" => "users#show", :as => "profile"
+  get "/edit_profile" => "users#edit", :as => "edit_user"
+
+  get "/profile" => "users#show", :as => "user"
+
+  get "/logout" => "users#logout", :as => "/logout"
 
 
   resources :cyclists
