@@ -3,7 +3,6 @@ ActiveAdmin.register Location do
   permit_params :location_name, :url
 
   filter :location_name
-  filter :url
 
   index do
     selectable_column
