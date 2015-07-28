@@ -118,11 +118,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-<<<<<<< HEAD
-      @user = User.find(10)
-=======
       @user = User.find(session[:user_id])
->>>>>>> 9aed23e568677308fc542f3ebb6fbbc638d4f247
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
