@@ -1,13 +1,21 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  # Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+  # end
+
   root 'users#index'
+
+  # devise_for :users
+
   get "/login" => "users#index"
 
-  post "/authenticate_login" => "users#authenticate_login"
-  # post "/admin/users" => "users#authenticate_login"
+  #post "/authenticate_login" => "users#login"
 
   get "/instructions" => "users#instructions"
 

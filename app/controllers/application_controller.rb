@@ -5,11 +5,4 @@ class ApplicationController < ActionController::Base
 
   # before_action :authenticate_user!
 
-  # def check_login
-  #   if session[:user_id] == nil
-  #     redirect_to "/login"
-  #   else
-  #     @user = User.find(session[:user_id])
-  #   end
-  # end
 end
