@@ -7,9 +7,9 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    redirect_to "/profile"
+  end
 
   # DELETE /resource/sign_out
   # def destroy

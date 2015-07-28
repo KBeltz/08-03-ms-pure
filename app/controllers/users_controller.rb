@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    binding.pry
     if session[:user_id]
       @user = User.find(session[:user_id])
     else
@@ -116,7 +117,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(6)
+      @user = User.find(10)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
