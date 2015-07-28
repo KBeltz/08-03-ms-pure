@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @user = User.find(6)
   end
 
   # GET /users/1
