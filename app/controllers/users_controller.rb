@@ -36,7 +36,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @user = User.find(6)
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    else
+      @user = User.new
+    end
   end
 
   # GET /users/1
