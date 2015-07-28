@@ -11,11 +11,9 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  # devise_for :users
-
   get "/login" => "users#index"
 
-  #post "/authenticate_login" => "users#login"
+  #post "/authenticate_login" => "users/sessions#create"
 
   get "/instructions" => "users#instructions"
 

@@ -6,26 +6,26 @@ class UsersController < ApplicationController
   end
 
   # Post /authenticate_login
-  def authenticate_login
-    entered_email = params["user"]["email"]
-    @user = User.find_by(email: entered_email)
-
-    if !@user.nil?
-      @valid = true
-      given_pw = params["user"]["password"]
-      actual_pw = BCrypt::Password.new(@user.password)
-      if actual_pw == given_pw
-        session[:user_id] = @user.id
-        redirect_to user_path(session[:user_id])
-      else
-        @valid = false
-        render "login"
-      end
-    else
-      @valid = false
-      render "login"
-    end
-  end
+  # def authenticate_login
+  #   entered_email = params["user"]["email"]
+  #   @user = User.find_by(email: entered_email)
+  #
+  #   if !@user.nil?
+  #     @valid = true
+  #     given_pw = params["user"]["password"]
+  #     actual_pw = BCrypt::Password.new(@user.password)
+  #     if actual_pw == given_pw
+  #       session[:user_id] = @user.id
+  #       redirect_to user_path(session[:user_id])
+  #     else
+  #       @valid = false
+  #       render "login"
+  #     end
+  #   else
+  #     @valid = false
+  #     render "login"
+  #   end
+  # end
 
   # GET /users
   # GET /users.json
