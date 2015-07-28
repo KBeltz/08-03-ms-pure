@@ -24,11 +24,6 @@
           <li><a href="#">random</a></li>
         </ul>
       </li>
-      <%= form_tag("/authenticate_login", method: "post", :class => "navbar-form form-inline pull-right") do %>
-          <input type="text" name="user[email]" placeholder="Email">
-          <input type="password" name="user[password]" placeholder="Password">
-          <button type="submit" class="btn btn-default">Log in</button>
-      <% end %>
     </ul>
 
     <div class="col-sm-3 col-md-3 pull-right">
