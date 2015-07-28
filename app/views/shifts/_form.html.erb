@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :user_id %><br>
-    <%= f.select("user_id", User.all.collect {|u| [ u.username, u.id ] }, { include_blank: false }) %>
+    <%= f.select("user_id", User.all.collect {|u| [ u.first_name + " " + u.last_name, u.id ] }, { include_blank: false }) %>
   </div>
   <div class="field">
     <%= f.label :location_id %><br>
