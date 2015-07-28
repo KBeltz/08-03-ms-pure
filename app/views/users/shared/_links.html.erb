@@ -1,5 +1,9 @@
 <%- if controller_name != 'sessions' %>
+<<<<<<< HEAD
   <%= link_to "profile", user_path(resource_name) %><br />
+=======
+  <%= link_to "profile", new_profile_path(resource_name) %><br />
+>>>>>>> 9aed23e568677308fc542f3ebb6fbbc638d4f247
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
