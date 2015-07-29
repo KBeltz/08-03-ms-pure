@@ -1,12 +1,6 @@
 class PedestriansController < ApplicationController
   before_action :set_pedestrian, only: [:show, :edit, :update, :destroy]
 
-  # GET /pedestrians
-  # GET /pedestrians.json
-  def index
-    @pedestrians = Pedestrian.all
-  end
-
   # GET /pedestrians/1
   # GET /pedestrians/1.json
   def show
