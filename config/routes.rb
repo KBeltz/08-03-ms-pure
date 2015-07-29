@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get "/home" => "pages#home", :as => "pages"
+  get "/contact" => "pages#contact", :as => "contact"
 
   get "/login" => "pages#home"
 
