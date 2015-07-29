@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
   menu priority: 3, label: "Volunteers"
-  permit_params :first_name, :last_name, :email, :password, :location_id
+  permit_params :first_name, :last_name, :email, :password, :location_id #, :commit, :utf8
 
   filter :first_name
   filter :last_name
