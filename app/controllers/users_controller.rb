@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @location = Location.find(current_user.location_id)
   end
 
   # GET /users/1/edit

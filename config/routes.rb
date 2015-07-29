@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  root 'users#index'
+  root 'pages#home'
+
+  get "/home" => "pages#home", :as => "pages"
 
   get "/login" => "users#index"
 
@@ -27,7 +29,6 @@ Rails.application.routes.draw do
 
   get "/profile" => "users#show", :as => "volunteer"
 
-  get "/logout" => "users#logout", :as => "/logout"
 
 
   resources :cyclists
