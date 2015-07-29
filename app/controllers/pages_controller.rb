@@ -1,4 +1,4 @@
-class Pages_controller < ApplicationController
+class PagesController < ApplicationController
 
   def home
 

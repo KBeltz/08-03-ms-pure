@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  root 'users#index'
+  root 'pages#home'
+
+  get "/home" => "pages#home", :as => "pages"
 
   get "/login" => "users#index"
 
