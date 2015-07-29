@@ -227,7 +227,6 @@ DEPENDENCIES
   activeadmin (~> 1.0.0.pre1)
   annotate (~> 2.6.10)
   arbre (~> 1.0.3)
-  bcrypt
   better_errors (~> 2.1.1)
   binding_of_caller (~> 0.7.2)
   bootstrap-sass (~> 3.3.5.1)

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   get "/edit_profile" => "users#edit", :as => "edit_user"
 
-  get "/profile" => "users#show", :as => "user"
+  get "/profile" => "users#show", :as => "volunteer"
 
   get "/logout" => "users#logout", :as => "/logout"
 
