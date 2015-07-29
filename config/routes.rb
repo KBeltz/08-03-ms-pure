@@ -27,7 +27,6 @@ Rails.application.routes.draw do
 
   get "/profile" => "users#show", :as => "volunteer"
 
-  get "/logout" => "users#logout", :as => "/logout"
 
 
   resources :cyclists
