@@ -25,9 +25,8 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       f.input :email
-      f.input :location_id
+      f.input :password
       if f.object.new_record?
-        f.input :password
         f.input :password_confirmation
       end
     end
