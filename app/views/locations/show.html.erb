@@ -1,7 +1,7 @@
 <div class="container">
   <div class="text-center">
-    <h1>Welcome!</h1>
-    <p class="lead">Some cool stuff goes down on this site!<br>
+    <h1>Hello <%= current_user.first_name %>!</h1>
+    <p class="lead">Here are some details about your location!<br>
       <!--<div class="row">-->
       <!--<div class="h4 col-md-8">-->
       <!--WELCOME TO THE 2015 CITY OF OMAHA PEDESTRIAN & BICYCLE COUNT!-->
@@ -46,38 +46,38 @@
 
 
 
-    <!--<div class="col-md-8">-->
-    <!--Thank you for taking the time and interest in volunteering to count. All this could not be done without help from-->
-    <!--our tireless volunteers! Special thanks go out to Julie Harris from Live Well Omaha and Stephen Osberg from-->
-    <!--Mode Shift Omaha without all their help and support the counts would not be possible!-->
-    <!--</div>-->
-    <!--<div class="col-md-3">-->
-    <!--<img class="img-responsive img-thumbnail" src="http://movingomaha.org/images/stories/Pictures/figures.jpg" alt="Image">-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row col-md-8">-->
-    <!--<div class="h4 col-md-8 ">-->
-    <!--Background-->
-    <!--</div>-->
-    <!--<div class="col-md-8">-->
-    <!--The counts are being complete to collect vital data of typical usage of our facilities in the City. The information will-->
-    <!--be used to help inform decision makers, help identify locations of high use and help secure funding to improve-->
-    <!--conditions in the years to come.-->
-
   </div>
 </div>
 
 </div><!-- /.container -->
 
-<div class="container col-md-3">
-  <div class="col-lg-12">
-    This site is a useful application for the volunteers of Moving Omaha to count the pedestrians and cyclists with ease!
-  </div>
-  <div class="col-lg-6">
-    <img src="http://movingomaha.org/images/stories/Pictures/figures.jpg" class="img-responsive">
-  </div>
 
+<div class="container col-md-6 col-md-offset-3 custom-border ">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="post-preview">
+        <h2 class="post-title">
+          Your Location
+        </h2>
+        <p>
+          <strong>Location name:</strong>
+          <%= @location.location_name %>
+
+        </p>
+
+        <p>
+          <strong>Url:</strong>
+          <%= @location.url %>
+
+        </p>
+        <p>
+          <%= link_to 'Back', volunteer_path %>
+        </p>
+
+      </div>
+      <hr>
+    </div>
+  </div>
 </div>
 
 
@@ -96,19 +96,7 @@
 
 
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Location name:</strong>
-  <%= @location.location_name %>
-
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @location.url %>
-
-</p>
 
 
-<%= link_to 'Back', volunteer_path %>
+
+
