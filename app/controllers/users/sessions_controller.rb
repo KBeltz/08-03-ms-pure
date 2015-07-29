@@ -1,5 +1,4 @@
 class Users::SessionsController < Devise::SessionsController
-before_filter :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
   def new
@@ -8,7 +7,6 @@ before_filter :configure_sign_in_params, only: [:create]
 
   # POST /resource/sign_in
   def create
-    redirect_to "/profile"
     super
   end
 
