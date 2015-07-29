@@ -1,11 +1,11 @@
 ActiveAdmin.register User do
   menu priority: 3, label: "Volunteers"
-  permit_params :first_name, :last_name, :email, :password, :location_id #, :commit, :utf8
+  actions :all, except: [:edit]
+  permit_params :first_name, :last_name, :email, :password
 
   filter :first_name
   filter :last_name
   filter :email
-  filter :location_id, as: :select
 
   # index download_links: [:pdf]
   # would actually need to implement the PDF rendering, but the
