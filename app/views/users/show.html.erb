@@ -44,7 +44,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6  toppad  pull-right col-md-offset-3 ">
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      <%= link_to(' Logout', destroy_user_session_path, :method => :delete, :class => "glyphicon glyphicon-log-out ") %>
       <br>
       <p class=" text-info">Updated at - <%= current_user.updated_at %></p>
     </div>
@@ -67,6 +67,7 @@
                 </tr>
                 <tr>
                   <td>Location</td>
+                  <td><%= @location.location_name %></td>
 
                 </tr>
 

@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
   menu priority: 3, label: "Volunteers"
-  permit_params :first_name, :last_name, :email, :password, :location_id
+  permit_params :first_name, :last_name, :email, :password, :location_id #, :commit, :utf8
 
   filter :first_name
   filter :last_name
@@ -17,12 +17,6 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :email
-    column "Location", :location_id
-    # , :location_id do |i|
-    #   @location = Location.find(i)
-    #   @location.location_name
-    # end
-    # reinstates default actions that are removed when a view is customized
     actions
   end
 
@@ -31,9 +25,8 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       f.input :email
-      f.input :location_id
+      f.input :password
       if f.object.new_record?
-        f.input :password
         f.input :password_confirmation
       end
     end
