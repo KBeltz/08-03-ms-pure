@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-  # TODO - Remove this exception when we move the homepage to a different controller.
-  before_action :authenticate_user!, except: [:index]
-  
+  before_action :authenticate_user!
+
   def index
-    # TODO - This is the homepage, but it shouldn't be. Make a new "pages_controller".
   end
 
   # GET /users/1
