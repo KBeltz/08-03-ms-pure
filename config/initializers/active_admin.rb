@@ -1,13 +1,13 @@
 ActiveAdmin.setup do |config|
   # == Site Title
   #
-  # Set the title that is displayed on the main layout
+  # Set the title that is displayed on the pages layout
   # for each of the active admin pages.
   #
   config.site_title = "Bike Ped Counter"
 
   # Set the link url for the title. For example, to take
-  # users to your main site. Defaults to no link.
+  # users to your pages site. Defaults to no link.
   #
   config.site_title_link = "/login"
 
@@ -44,7 +44,7 @@ ActiveAdmin.setup do |config|
   #   end
   #
   # This will ONLY change the title for the admin section. Other
-  # namespaces will continue to use the main "site_title" configuration.
+  # namespaces will continue to use the pages "site_title" configuration.
 
   # == User Authentication
   #
