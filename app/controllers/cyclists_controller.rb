@@ -1,12 +1,6 @@
 class CyclistsController < ApplicationController
   before_action :set_cyclist, only: [:show, :edit, :update, :destroy]
 
-  # GET /cyclists
-  # GET /cyclists.json
-  def index
-    @cyclists = Cyclist.all
-  end
-
   # GET /cyclists/1
   # GET /cyclists/1.json
   def show
