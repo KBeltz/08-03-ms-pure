@@ -17,12 +17,7 @@ ActiveAdmin.register Location do
     f.inputs "Location Details" do
       f.input :location_name
       f.input :url
-      f.input :map_image, :as => :file, :hint => image_tag(f.object.map_image.url(:thumb))
-      f.input :map_image_cache, :as => :hidden
-        # f.input :map_image, :as => :file, :hint => f.object.map_image.present? \
-        # ? image_tag(f.object.map_image.url(:thumb))
-        # : content_tag(:span, "No image yet")
-        # f.input :map_image_cache, :as => :hidden
+      f.input :map_image
     end
     f.button :Submit
   end
