@@ -19,9 +19,9 @@
           <li>Location</li>
 
           <li class="divider"></li>
-          <li><a href="#profile_panel" data-toggle="collapse">Toggle profile panel</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#profile_panel">Toggle profile panel</a></li>
           <li class="divider"></li>
-          <li><a href="#counter" data-toggle="collapse">toggle counter</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#bike_ped_counter">toggle counter</a></li>
           <li class="divider"></li>
         </ul>
       </li>
@@ -90,12 +90,17 @@
   </div>
 </div>
 
+<div class="container collapse" id="bike_ped_counter">
+  <button href="#" class="btn btn-default" data-toggle="collapse" data-target="#bike"> Cyclists</button>
+  <button href="#" class="btn btn-default" data-toggle="collapse" data-target="#ped">Ped</button>
+</div>
+
 <!--counter forms-->
 <div class="container collapse" id="counter">
   <h1>Counter forms</h1>
   <p>Use these forms to input your counts</p>
 
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="bike">
     <div class="panel-heading">
       <h3 class="panel-title">Cyclists</h3>
     </div>
@@ -107,72 +112,49 @@
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
-              <label class="control-label">First Name</label>
-              <input type="text" class="form-control" placeholder="Enter first name">
+              <label class="control-label">Sex</label><br>
+              <input type="radio" name="sex" value="male">Male<br>
+              <input type="radio" name="sex" value="female">Female<br>
             </div>
           </div><!-- Col -->
 
           <div class="col-sm-6">
             <div class="form-group">
-              <label class="control-label">Last Name</label>
-              <input type="text" class="form-control" placeholder="Enter last name">
+              <label class="control-label">Description</label><br>
+              <input type="radio" name="description" value="with helmet">with helmet<br>
+              <input type="radio" name="description" value="without helmet">without helmet<br>
+              <input type="radio" name="description" value="sidewalk">sidewalk<br>
+              <input type="radio" name="description" value="wrong_way">Wrong way<br>
             </div>
           </div><!-- Col -->
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="control-label">Quantity</label><br>
+                <input type="number" name="quantity"><br>
+              </div>
+              </div>
+            </div><!-- Col -->
         </div><!-- Row -->
 
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">City</label>
-              <input type="text" class="form-control" placeholder="Enter city">
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="pull-right">
+                <button class="btn btn-danger" type="reset">Reset</button>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </div>
             </div>
-          </div><!-- Col -->
+          </div>
+        </div><!-- Panel Footer -->
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">State</label>
-              <input type="text" class="form-control" placeholder="Enter state">
-            </div>
-          </div><!-- Col -->
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">Zip</label>
-              <input type="text" class="form-control" placeholder="Enter zip code">
-            </div>
-          </div><!-- Col -->
-        </div><!-- Row -->
-
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label class="control-label">Email address</label>
-              <input type="email" class="form-control" placeholder="Enter email">
-            </div>
-          </div><!-- Col -->
-
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label class="control-label">Password</label>
-              <input type="password" class="form-control" placeholder="Password">
-            </div>
-          </div><!-- Col -->
-        </div><!-- Row -->
       </form>
     </div>
-    <div class="panel-footer">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="pull-right">
-            <button type="button" class="btn btn-default reset">Reset</button>
-            <button type="button" class="btn btn-primary submit">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div><!-- Panel Footer -->
   </div>
 
-  <div class="panel panel-default">
+  <div class="panel panel-default" id="ped">
     <div class="panel-heading">
       <h3 class="panel-title">Panel 2</h3>
     </div>
