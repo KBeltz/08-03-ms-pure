@@ -1,6 +1,6 @@
 ActiveAdmin.register Location do
   menu priority: 4
-  permit_params :location_name, :url, :map_image
+  permit_params :location_name, :url, :map_image, :map_image_cache
 
   filter :location_name
 
@@ -17,17 +17,12 @@ ActiveAdmin.register Location do
     f.inputs "Location Details" do
       f.input :location_name
       f.input :url
-      if f.object.map_image?
-        image_tag f.object.map_image.url(:thumbnail)
-      else
-        f.input :map_image, :image_preview => true
-      end
-      # f.inputs "Attachment", :multipart => true do
-      #   f.input :map_image, :as => :file, :hint => f.object.map_image.present? \
-      #   ? image_tag(f.object.map_image.url(:thumb))
-      #   : content_tag(:span, "No image yet")
-      #   f.input :image_cache, :as => :hidden
-      # end
+      f.input :map_image, :as => :file, :hint => image_tag(f.object.map_image.url(:thumb))
+      f.input :map_image_cache, :as => :hidden
+        # f.input :map_image, :as => :file, :hint => f.object.map_image.present? \
+        # ? image_tag(f.object.map_image.url(:thumb))
+        # : content_tag(:span, "No image yet")
+        # f.input :map_image_cache, :as => :hidden
     end
     f.button :Submit
   end
