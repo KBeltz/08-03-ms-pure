@@ -9,6 +9,7 @@ ActiveAdmin.register Location do
     id_column
     column :location_name
     column "Map Link", :url
+
     # reinstates default actions that are removed when a view is customized
     actions
   end
@@ -17,9 +18,29 @@ ActiveAdmin.register Location do
     f.inputs "Location Details" do
       f.input :location_name
       f.input :url
-      f.file_field :map_image
+      if f.object.map_image?
+        image_tag f.object.map_image.url(:thumbnail)
+      else
+        f.input :map_image, :as => :file
+      end
+      # f.inputs "Attachment", :multipart => true do
+      #   f.input :map_image, :as => :file, :hint => f.object.map_image.present? \
+      #   ? image_tag(f.object.map_image.url(:thumb))
+      #   : content_tag(:span, "No image yet")
+      #   f.input :image_cache, :as => :hidden
+      # end
     end
     f.button :Submit
+  end
+
+  show do
+    @location = Location.find(params[:id])
+    selectable_column
+    id_column
+    column :location_name
+    column "Map Link", :url
+    image_tag("/locations/#{@location.id}/map_image/#{@location.map_image_filename}" if @location.map_image_filename?, :alt => "Location Map")
+    actions
   end
 
   # See permitted parameters documentation:

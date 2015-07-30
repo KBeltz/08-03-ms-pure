@@ -35,7 +35,8 @@ class Location < ActiveRecord::Base
     # Closes the file
     f.close
 
-    # Sets the map_image to nil, since we're done with it
+    # Sets the map_image to nil, since we're done with it; prevents it from
+    #   continually trying to rewrite the same file.
     self.map_image = nil
 
     # Updates the location object's filename to the origninal file name
