@@ -33,16 +33,6 @@ ActiveAdmin.register Location do
     f.button :Submit
   end
 
-  show do
-    @location = Location.find(params[:id])
-    selectable_column
-    id_column
-    column :location_name
-    column "Map Link", :url
-    image_tag("/locations/#{@location.id}/map_image/#{@location.map_image_filename}" if @location.map_image_filename?, :alt => "Location Map")
-    actions
-  end
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
