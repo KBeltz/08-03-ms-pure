@@ -21,7 +21,7 @@
           <li class="divider"></li>
           <li><a href="#" data-toggle="collapse" data-target="#profile_panel">Toggle profile panel</a></li>
           <li class="divider"></li>
-          <li><a href="#" data-toggle="collapse" data-target="#bike_ped_counter">toggle counter</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#bike_ped_counter,#counter">toggle counter</a></li>
           <li class="divider"></li>
         </ul>
       </li>
@@ -91,8 +91,8 @@
 </div>
 
 <div class="container collapse" id="bike_ped_counter">
-  <button href="#" class="btn btn-default" data-toggle="collapse" data-target="#bike"> Cyclists</button>
-  <button href="#" class="btn btn-default" data-toggle="collapse" data-target="#ped">Ped</button>
+  <button class="btn btn-default" data-toggle="collapse" data-target="#bike"> Cyclists</button>
+  <button class="btn btn-default" data-toggle="collapse" data-target="#ped">Ped</button>
 </div>
 
 <!--counter forms-->
@@ -100,7 +100,7 @@
   <h1>Counter forms</h1>
   <p>Use these forms to input your counts</p>
 
-  <div class="panel panel-default" id="bike">
+  <div class="panel panel-default collapse" id="bike">
     <div class="panel-heading">
       <h3 class="panel-title">Cyclists</h3>
     </div>
@@ -143,7 +143,7 @@
             <div class="col-sm-12">
               <div class="pull-right">
                 <button class="btn btn-danger" type="reset">Reset</button>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
               </div>
             </div>
           </div>
@@ -154,64 +154,37 @@
     </div>
   </div>
 
-  <div class="panel panel-default" id="ped">
+  <div class="panel panel-default collapse" id="ped">
     <div class="panel-heading">
-      <h3 class="panel-title">Panel 2</h3>
+      <h3 class="panel-title">Pedestrians</h3>
     </div>
     <div class="panel-body">
       <div class="alert alert-warning">
-        Please complete required fields marked in red.
+        Please choose one.
       </div>
       <form>
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
-              <label class="control-label">First Name</label>
-              <input type="text" class="form-control" placeholder="Enter first name">
-            </div>
-          </div><!-- Col -->
-
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label class="control-label">Last Name</label>
-              <input type="text" class="form-control" placeholder="Enter last name">
+              <label class="control-label">Pedestrian</label><br>
+              <input type="radio" name="Pedestrian_description" value="female">Female<br>
+              <input type="radio" name="Pedestrian_description" value="male">Male<br>
+              <input type="radio" name="Pedestrian_description" value="desabled">Disabled<br>
+              <input type="radio" name="Pedestrian_description" value="other">Other<br>
             </div>
           </div><!-- Col -->
         </div><!-- Row -->
-
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">City</label>
-              <input type="text" class="form-control" placeholder="Enter city">
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="pull-right">
+                <button class="btn btn-danger" type="reset">Reset</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
             </div>
-          </div><!-- Col -->
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">State</label>
-              <input type="text" class="form-control" placeholder="Enter state">
-            </div>
-          </div><!-- Col -->
-
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="control-label">Zip</label>
-              <input type="text" class="form-control" placeholder="Enter zip code">
-            </div>
-          </div><!-- Col -->
-        </div><!-- Row -->
+          </div>
+        </div><!-- Panel Footer -->
       </form>
     </div>
-    <div class="panel-footer">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="pull-right">
-            <button type="button" class="btn btn-default reset">Reset</button>
-            <button type="button" class="btn btn-primary submit">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div><!-- Panel Footer -->
   </div>
 </div>
