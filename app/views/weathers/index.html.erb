@@ -1,19 +1,8 @@
-<h1>Listing Weather</h1>
+<!-- This is the view that shows one time before starting a count shift.  -->
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Weather</th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1>What's the weather like today?</h1>
+  <select>
     <% @weather.each do |weather| %>
-      <tr>
-        <td><%= weather.id %></td>
-        <td><%= weather.weather %></td>
-      </tr>
+      <option value="<%= weather.id %>"><%= weather.weather %></option>
     <% end %>
-  </tbody>
-</table>
+  </select>
