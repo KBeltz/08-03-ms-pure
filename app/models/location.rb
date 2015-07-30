@@ -14,4 +14,13 @@ class Location < ActiveRecord::Base
   validates :location_name, presence: true
   validates :url, presence: true
   has_many :shifts
+
+  attr_accessor :map_image
+
+  after_save :save_map_image, if: :map_image
+
+  def save_map_image
+    filename = map_image.original_filename
+    folder = "public/locations/#{id}/map_image"
+  end
 end
