@@ -21,12 +21,12 @@ class Location < ActiveRecord::Base
 
   def save_map_image
     # Sets the map image name to the origninal name when uploaded
-    filename = map_image.original_filename
+    filename = map_image.to_s
     # Creates a new folder for the image, based on its id
     folder = "public/locations/#{id}/map_image"
 
     # Makes the folder, whether or not it exists already
-    FileUtils::mkdir_p.folder
+    FileUtils::mkdir_p folder
 
     # Opens the directory and file name that was uploaded, makes it writable
     f = File.open File.join(folder, filename), "wb"
@@ -40,7 +40,7 @@ class Location < ActiveRecord::Base
     self.map_image = nil
 
     # Updates the location object's filename to the origninal file name
-    update map_image_filename: filename
+    update map_image: filename
   end
 
 end

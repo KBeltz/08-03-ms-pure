@@ -1,6 +1,6 @@
 ActiveAdmin.register Location do
   menu priority: 4
-  permit_params :location_name, :url
+  permit_params :location_name, :url, :map_image
 
   filter :location_name
 
