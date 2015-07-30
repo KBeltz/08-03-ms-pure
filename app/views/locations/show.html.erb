@@ -67,9 +67,15 @@
 
         <p>
           <strong>Url:</strong>
-          <%= @location.url %>
+          <a href="<%= @location.url %>">Map</a>
 
         </p>
+
+        <p>
+          <strong>Location</strong>
+          <img src="<%= @location.map_image_url %>" width="500">
+        </p>
+
         <p>
           <%= link_to 'Back', volunteer_path %>
         </p>
