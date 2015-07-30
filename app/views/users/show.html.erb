@@ -19,9 +19,10 @@
           <li>Location</li>
 
           <li class="divider"></li>
-          <li><a href="#">Start counter</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#profile_panel">Toggle profile panel</a></li>
           <li class="divider"></li>
-          <li><a href="#">random</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#bike_ped_counter,#counter">toggle counter</a></li>
+          <li class="divider"></li>
         </ul>
       </li>
     </ul>
@@ -31,7 +32,7 @@
   </div>
 </div>
 <!--welcome message-->
-<div class="container">
+<div class="container" id="welcome">
   <div class="text-center">
     <h1>Welcome, <%= current_user.first_name %></h1>
     <p class="lead">Thank you for volunteering!<br>
@@ -40,7 +41,7 @@
 </div><!-- /.container -->
 
 <!--logout and last updated-->
-<div class="container">
+<div class="container" id="logout_last_updated">
   <div class="row">
     <div class="col-md-6  toppad  pull-right col-md-offset-3 ">
       <%= link_to(' Logout', destroy_user_session_path, :method => :delete, :class => "glyphicon glyphicon-log-out ") %>
@@ -50,7 +51,7 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
 
 <!--user profile panel-->
-      <div class="panel panel-info">
+      <div class="panel panel-info collapse in" id="profile_panel">
         <div class="panel-heading">
           <h3 class="panel-title"><%= current_user.first_name %></h3>
         </div>
@@ -78,13 +79,112 @@
           </div>
         </div>
         <!--user profile panel footer-->
-        <div class="panel-footer">
+        <div class="panel-footer" id="profile_panel_footer">
           <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
           <span class="pull-right">
             <a href=<%= edit_user_path %> data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
           </span>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="container collapse" id="bike_ped_counter">
+  <button class="btn btn-default" data-toggle="collapse" data-target="#bike"> Cyclists</button>
+  <button class="btn btn-default" data-toggle="collapse" data-target="#ped">Ped</button>
+</div>
+
+<!--counter forms-->
+<div class="container collapse" id="counter">
+  <h1>Counter forms</h1>
+  <p>Use these forms to input your counts</p>
+
+  <div class="panel panel-default collapse" id="bike">
+    <div class="panel-heading">
+      <h3 class="panel-title">Cyclists</h3>
+    </div>
+    <div class="panel-body">
+      <div class="alert alert-warning">
+        The quantity field is for indicating how many people fit the description you are giving.
+      </div>
+      <form>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="control-label">Sex</label><br>
+              <input type="radio" name="sex" value="male">Male<br>
+              <input type="radio" name="sex" value="female">Female<br>
+            </div>
+          </div><!-- Col -->
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="control-label">Description</label><br>
+              <input type="radio" name="description" value="with helmet">with helmet<br>
+              <input type="radio" name="description" value="without helmet">without helmet<br>
+              <input type="radio" name="description" value="sidewalk">sidewalk<br>
+              <input type="radio" name="description" value="wrong_way">Wrong way<br>
+            </div>
+          </div><!-- Col -->
+
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="control-label">Quantity</label><br>
+                <input type="number" name="quantity"><br>
+              </div>
+              </div>
+            </div><!-- Col -->
+        </div><!-- Row -->
+
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="pull-right">
+                <button class="btn btn-danger" type="reset">Reset</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div><!-- Panel Footer -->
+
+
+      </form>
+    </div>
+  </div>
+
+  <div class="panel panel-default collapse" id="ped">
+    <div class="panel-heading">
+      <h3 class="panel-title">Pedestrians</h3>
+    </div>
+    <div class="panel-body">
+      <div class="alert alert-warning">
+        Please choose one.
+      </div>
+      <form>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label class="control-label">Pedestrian</label><br>
+              <input type="radio" name="Pedestrian_description" value="female">Female<br>
+              <input type="radio" name="Pedestrian_description" value="male">Male<br>
+              <input type="radio" name="Pedestrian_description" value="desabled">Disabled<br>
+              <input type="radio" name="Pedestrian_description" value="other">Other<br>
+            </div>
+          </div><!-- Col -->
+        </div><!-- Row -->
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="pull-right">
+                <button class="btn btn-danger" type="reset">Reset</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div><!-- Panel Footer -->
+      </form>
     </div>
   </div>
 </div>
