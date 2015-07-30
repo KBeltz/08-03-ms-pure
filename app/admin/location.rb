@@ -13,6 +13,15 @@ ActiveAdmin.register Location do
     actions
   end
 
+  form do |f|
+    f.inputs "Location Details" do
+      f.input :location_name
+      f.input :url
+      f.file_field :map_image
+    end
+    f.button :Submit
+  end
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
