@@ -68,6 +68,8 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+gem 'rmagick'
+
 group :development do
   # Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.
   gem 'better_errors', '~> 2.1.1'
