@@ -6,12 +6,24 @@ body {
   background-color:  #20B1D2;
 }
 
+th, td {
+  padding: 10px;
+}
+
+
 p.lead {
   margin-bottom: 85px;
 }
+
+.col-lg-8 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .custom-border {
-  border-left: 21px solid gray;
-  border-right: 21px solid gray;
+  height: 500px;
+  border-left: 2px solid gray;
+  border-right: 2px solid gray;
 }
 
 .btn-circle {
@@ -28,4 +40,3 @@ p.lead {
   line-height: 1.3333333;
   border-radius: 6px;
 }
-

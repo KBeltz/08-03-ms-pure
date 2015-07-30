@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
   <div class="navbar-header">
@@ -17,7 +17,7 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Get involved</a></li>
+          <li><a href="/contact">Get involved</a></li>
           <li class="divider"></li>
           <li><a href=<%= locations_path %>>Locations</a></li>
           <li class="divider"></li>
@@ -41,34 +41,38 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="text-center">
-    <h1>Welcome!</h1>
-    <p class="lead">Some cool stuff goes down on this site!<br>
+<div class="container col-md-3 col-sm-3 col-xs-3 col-lg-3">
 
+</div>
+
+<div class="container " id="welcome">
+  <div class="text-center">
+    <h1>Locations</h1>
+    <p class="lead">This is a list of the volunteer locations.<br>
   </div>
 </div>
 
-</div><!-- /.container -->
+<!--left side content-->
 
 <div class="container col-md-3 col-sm-3 col-xs-3 col-lg-3">
-  <div class="col-lg-12">
-    This site is a useful application for the volunteers of Moving Omaha to count the pedestrians and cyclists with ease!
-  </div>
+  <h2 class="text-center">
+    Background
+  </h2>
   <div class="col-lg-6">
     <img src="http://movingomaha.org/images/stories/Pictures/figures.jpg" class="img-responsive">
   </div>
-
+  <br>
+  <div class="col-lg-12">
+    <p>The counts are being complete to collect vital data of typical usage of our facilities in the City. This information will be used to help inform decision makers, help identify locations of high use, and help secure funding to improve conditions for cyclists and pedestrians in the years to come.</p>
+  </div>
 </div>
+
+<!-- Main content -->
 
 <div class="container col-md-6 col-sm-6 col-xs-6 col-lg-6 custom-border">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="post-preview">
-        <h2 class="post-title">
-          Count Location
-        </h2>
-
           <table>
             <thead>
               <tr>
@@ -93,9 +97,12 @@
   </div>
 </div>
 
+<!--right side content-->
 <div class="container col-md-3 col-sm-3 col-xs-3 col-lg-3">
   <div class="col-md-12">
-    Cool site content goes here.
+    <h2 class="text-center">
+      Links
+    </h2>
     <a href="http://www.movingomaha.org">Moving Omaha</a>
   </div>
 </div>
