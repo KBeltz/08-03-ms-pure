@@ -26,14 +26,15 @@ ActiveAdmin.register Location do
     attributes_table do
       row :id
       row :location_name
-      row :url
+      row "Map Link", :url do
+        link_to "Map", location.url
+      end
       row :created_at
       row :updated_at
       row :map_image do
         image_tag location.map_image.url if :map_image?
       end
     end
-    active_admin_comments
   end
 
   # See permitted parameters documentation:
