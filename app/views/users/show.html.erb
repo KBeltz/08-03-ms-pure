@@ -19,7 +19,7 @@
           <li>Location</li>
 
           <li class="divider"></li>
-          <li><a href="#" data-toggle="collapse" data-target="#profile_panel">Toggle profile panel</a></li>
+          <li><a href="#" data-toggle="collapse" data-target="#profile_panel">Start Counting</a></li>
           <li class="divider"></li>
           <li><a href="#" data-toggle="collapse" data-target="#bike_ped_counter,#counter">toggle counter</a></li>
           <li class="divider"></li>
@@ -93,6 +93,18 @@
 <div class="container collapse" id="bike_ped_counter">
   <button class="btn btn-default" data-toggle="collapse" data-target="#bike"> Cyclists</button>
   <button class="btn btn-default" data-toggle="collapse" data-target="#ped">Ped</button>
+  <br><br>
+  <div class="alert alert-warning">
+    The quantity field is for indicating how many people fit the description you are giving.
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="control-label">Quantity</label><br>
+        <input type="number" name="quantity"><br>
+      </div>
+      </div>
+    </div><!-- Col -->
 </div>
 
 <!--counter forms-->
@@ -105,37 +117,25 @@
       <h3 class="panel-title">Cyclists</h3>
     </div>
     <div class="panel-body">
-      <div class="alert alert-warning">
-        The quantity field is for indicating how many people fit the description you are giving.
-      </div>
       <form>
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
               <label class="control-label">Sex</label><br>
-              <input type="radio" name="sex" value="male">Male<br>
-              <input type="radio" name="sex" value="female">Female<br>
+              <input type="radio" name="sex" value="male"> Male<br>
+              <input type="radio" name="sex" value="female"> Female<br>
             </div>
           </div><!-- Col -->
 
           <div class="col-sm-6">
             <div class="form-group">
               <label class="control-label">Description</label><br>
-              <input type="radio" name="description" value="with helmet">with helmet<br>
-              <input type="radio" name="description" value="without helmet">without helmet<br>
-              <input type="radio" name="description" value="sidewalk">sidewalk<br>
-              <input type="radio" name="description" value="wrong_way">Wrong way<br>
+              <input type="radio" name="description" value="with helmet"> With Helmet<br>
+              <input type="radio" name="description" value="without helmet"> Without Helmet<br>
+              <input type="radio" name="description" value="sidewalk"> Sidewalk<br>
+              <input type="radio" name="description" value="wrong_way"> Wrong Way<br>
             </div>
           </div><!-- Col -->
-
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label class="control-label">Quantity</label><br>
-                <input type="number" name="quantity"><br>
-              </div>
-              </div>
-            </div><!-- Col -->
         </div><!-- Row -->
 
         <div class="panel-footer">
@@ -167,10 +167,10 @@
           <div class="col-sm-6">
             <div class="form-group">
               <label class="control-label">Pedestrian</label><br>
-              <input type="radio" name="Pedestrian_description" value="female">Female<br>
-              <input type="radio" name="Pedestrian_description" value="male">Male<br>
-              <input type="radio" name="Pedestrian_description" value="desabled">Disabled<br>
-              <input type="radio" name="Pedestrian_description" value="other">Other<br>
+              <input type="radio" name="Pedestrian_description" value="female"> Female<br>
+              <input type="radio" name="Pedestrian_description" value="male"> Male<br>
+              <input type="radio" name="Pedestrian_description" value="desabled"> Disabled<br>
+              <input type="radio" name="Pedestrian_description" value="other"> Other<br>
             </div>
           </div><!-- Col -->
         </div><!-- Row -->
