@@ -37,4 +37,16 @@ class User < ActiveRecord::Base
   validates :password, presence: true
 
   has_many :shifts
+
+  after_create :create_full_name
+  before_save :update_full_name
+
+  def create_full_name
+    self.update(full_name: (first_name + ' ' + last_name))
+  end
+
+  def update_full_name
+    self.full_name = first_name + ' ' + last_name
+  end
+
 end
