@@ -15,8 +15,8 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <!-- should go to a list of locations associated with user's specific shift(s) -->
           <li>Location</li>
+          <li>Profile</li>
         </ul>
       </li>
     </ul>
@@ -32,7 +32,6 @@
     <p class="lead">Thank you for volunteering!<br>
   </div>
 </div>
-</div><!-- /.container -->
 
 <!--logout and last updated-->
 <div class="container" id="logout_last_updated">
@@ -97,32 +96,25 @@
             <div class="content">
               <div class="panel panel-info collapse in" id="profile_panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Shift Data</h3>
+                  <h3 class="panel-title">You are signed up for the following shifts!</h3>
                 </div>
 
                 <div class="panel-body">
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
-                      <h3 class="panel-title">What shift will this data be associated with?</h3>
-                      <% volunteer = User.find(current_user.id) %>
-                      <% count = volunteer.shifts %>
-                      <select>
-                        <% count.each do |a| %>
-                          <option value="<%= a.id %>"><%= a.start_time.localtime %></option>
-                        <% end %>
-                      </select>
-                      <br><br>
-                    </div>
-                    <div class=" col-md-9 col-lg-9 ">
-                      <h3 class="panel-title">What is the weather like today?</h3>
-                      <% forecasts = Weather.all %>
-                        <select>
-                          <% forecasts.each do |a| %>
-                            <option value="<%= a.id %>"><%= a.weather %></option>
+                      <div class="text-center">
+                        <p class="lead">
+
+                          <% volunteer = User.find(current_user.id) %>
+                          <% counts = volunteer.shifts %>
+                            <% counts.each do |a| %>
+                            <% count_location = Location.find(a.location_id) %>
+                            <p>
+                              <a href="<%= a.id %>"><%= count_location.location_name %></a> from <%= a.start_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %> to <%= a.end_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %>
+                            </p>
                           <% end %>
-                        </select>
-                        <br><br>
-                    </div>
+                        <br>
+                      </div>
                   </div>
                 <!-- weather panel footer-->
                 <div class="panel-footer" id="profile_panel_footer">
