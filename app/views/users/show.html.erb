@@ -110,7 +110,7 @@
                             <% counts.each do |a| %>
                             <% count_location = Location.find(a.location_id) %>
                             <p>
-                              <a href="<%= a.id %>"><%= count_location.location_name %></a> from <%= a.start_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %> to <%= a.end_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %>
+                              <%= count_location.location_name %> from <a href="<%= a.id %>"><%= a.start_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %> to <%= a.end_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %></a> 
                             </p>
                           <% end %>
                         <br>
@@ -144,7 +144,7 @@
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                       <h3 class="panel-title">Quantity</h3>
-                      <input type="number" min="0" name="quantity"><br>
+                      <input type="number" min="0" name="cyclist[quantity]"><br>
                       <br>
                       <div class="row">
                         <div class="col-sm-6">
@@ -196,7 +196,7 @@
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                       <h3 class="panel-title">Quantity</h3>
-                      <input type="number" min="0" name="quantity"><br>
+                      <input type="number" min="0" name="pedestrian[quantity]"><br>
                       <br>
                       <div class="row">
                         <div class="col-sm-6">
