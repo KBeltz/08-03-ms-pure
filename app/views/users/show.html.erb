@@ -200,6 +200,7 @@
                 </div>
 
                 <div class="panel-body">
+                  <%= form_tag("/pedestrians", method: "post") do %>
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                       <h3 class="panel-title">Quantity</h3>
@@ -209,10 +210,10 @@
                         <div class="col-sm-6">
                           <div class="form-group">
                             <h3 class="panel-title">Description</h3><br>
-                            <input id="radio" type="radio" name="Pedestrian_description" value="female"> Female<br>
-                            <input id="radio" type="radio" name="Pedestrian_description" value="male"> Male<br>
-                            <input id="radio" type="radio" name="Pedestrian_description" value="disabled"> Disabled<br>
-                            <input id="radio" type="radio" name="Pedestrian_description" value="other"> Other<br>
+                            <input id="radio" type="radio" name="pedestrian[description]" value="female"> Female<br>
+                            <input id="radio" type="radio" name="pedestrian[description]" value="male"> Male<br>
+                            <input id="radio" type="radio" name="pedestrian[description]" value="disabled"> Disabled<br>
+                            <input id="radio" type="radio" name="pedestrian[description]" value="other"> Other<br>
                           </div>
                         </div><!-- Col -->
                       </div><!-- Row -->
@@ -225,6 +226,7 @@
                     <button type="submit" class="btn btn-success">Submit</button>
                   </span>
                 </div>
+                <% end %>
               </div>
             </div>
           </div>
