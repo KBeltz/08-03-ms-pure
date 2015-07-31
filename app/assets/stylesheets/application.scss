@@ -118,10 +118,9 @@ p.lead {
     transition: all .5s ease-out;
 }
 .vertical [type=checkbox]:checked ~ label ~ .content {
-    height:400px;
+    height:350px;
     border:1px solid #542437;
 }
-
 input#radio {
   display: inline;
 }
