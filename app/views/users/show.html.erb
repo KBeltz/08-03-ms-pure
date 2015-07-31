@@ -66,7 +66,7 @@
                         <% count_location = Location.find(a.location_id) %>
                   </p>
                   <p>
-                        <a href="locations/<%= a.location_id %>"><%= count_location.location_name %></a> from
+                        <a href="<%= a.location_id %>"><%= count_location.location_name %></a> from
                         <%= a.start_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %> to <%= a.end_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %>
                       <% end %>
                   <br><br>
@@ -129,7 +129,7 @@
             <div class="panel-footer" id="profile_panel_footer">
               <a href="mailto:email@example.com?Subject=Bike/Ped%20Count" target="_top" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
               <span class="pull-right">
-                <button type="submit" class="btn btn-success">Submit</button>
+                <a href=<%= edit_user_path %> data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
               </span>
             </div>
       </li>
