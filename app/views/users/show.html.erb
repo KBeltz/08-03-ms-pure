@@ -15,8 +15,8 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <!-- should go to a list of locations associated with user's specific shift(s) -->
           <li>Location</li>
+          <li>Profile</li>
         </ul>
       </li>
     </ul>
@@ -32,7 +32,6 @@
     <p class="lead">Thank you for volunteering!<br>
   </div>
 </div>
-</div><!-- /.container -->
 
 <!--logout and last updated-->
 <div class="container" id="logout_last_updated">
@@ -97,31 +96,25 @@
             <div class="content">
               <div class="panel panel-info collapse in" id="profile_panel">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Shift Data</h3>
+                  <h3 class="panel-title">You are signed up for the following shifts!</h3>
                 </div>
 
                 <div class="panel-body">
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
-                      <h3 class="panel-title">What shift will this data be associated with?</h3>
-                        <select>
-                            <option></option>
-                            <option value="Cloudy">Cloudy with a chance of meatballs</option>
-                            <option value="Sunny">Sunny</option>
-                            <option value="Rainy">Rainy</option>
-                        </select>
-                        <br><br>
-                    </div>
-                    <div class=" col-md-9 col-lg-9 ">
-                      <h3 class="panel-title">What is the weather like today?</h3>
-                        <select>
-                            <option></option>
-                            <option value="Cloudy">Cloudy with a chance of meatballs</option>
-                            <option value="Sunny">Sunny</option>
-                            <option value="Rainy">Rainy</option>
-                        </select>
-                        <br><br>
-                    </div>
+                      <div class="text-center">
+                        <p class="lead">
+
+                          <% volunteer = User.find(current_user.id) %>
+                          <% counts = volunteer.shifts %>
+                            <% counts.each do |a| %>
+                            <% count_location = Location.find(a.location_id) %>
+                            <p>
+                              <a href="<%= a.id %>"><%= count_location.location_name %></a> from <%= a.start_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %> to <%= a.end_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %>
+                            </p>
+                          <% end %>
+                        <br>
+                      </div>
                   </div>
                 <!-- weather panel footer-->
                 <div class="panel-footer" id="profile_panel_footer">
@@ -146,6 +139,8 @@
                 </div>
 
                 <div class="panel-body">
+                  <%= form_tag("/cyclists", method: "post") do %>
+
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                       <h3 class="panel-title">Quantity</h3>
@@ -155,18 +150,18 @@
                         <div class="col-sm-6">
                           <div class="form-group">
                             <h3 class="panel-title">Sex</h3><br>
-                            <input id="radio" type="radio" name="sex" value="male"> Male<br>
-                            <input id="radio" type="radio" name="sex" value="female"> Female<br>
+                            <input id="radio" type="radio" name="cyclist[sex]" value="male"> Male<br>
+                            <input id="radio" type="radio" name="cyclist[sex]" value="female"> Female<br>
                           </div>
                         </div><!-- Col -->
 
                         <div class="col-sm-6">
                           <div class="form-group">
                             <h3 class="panel-title">Description</h3><br>
-                            <input id="radio" type="radio" name="description" value="with helmet"> With Helmet<br>
-                            <input id="radio" type="radio" name="description" value="without helmet"> Without Helmet<br>
-                            <inputg id="radio" type="radio" name="description" value="sidewalk"> Sidewalk<br>
-                            <input id="radio" type="radio" name="description" value="wrong_way"> Wrong Way<br>
+                            <input id="radio" type="radio" name="cyclist[description]" value="with_helmet"> With Helmet<br>
+                            <input id="radio" type="radio" name="cyclist[description]" value="without_helmet"> Without Helmet<br>
+                            <input id="radio" type="radio" name="cyclist[description]" value="sidewalk"> Sidewalk<br>
+                            <input id="radio" type="radio" name="cyclist[description]" value="wrong_way"> Wrong Way<br>
                           </div>
                         </div><!-- Col -->
                       </div><!-- Row -->
@@ -178,6 +173,7 @@
                   <span class="pull-right">
                     <button type="submit" class="btn btn-success">Submit</button>
                   </span>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -196,6 +192,7 @@
                 </div>
 
                 <div class="panel-body">
+                  <%= form_tag("/pedestrians", method: "post") do %>
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                       <h3 class="panel-title">Quantity</h3>
@@ -205,10 +202,10 @@
                         <div class="col-sm-6">
                           <div class="form-group">
                             <h3 class="panel-title">Description</h3><br>
-                            <input id="radio" type="radio" name="Pedestrian_description" value="female"> Female<br>
-                            <input id="radio" type="radio" name="Pedestrian_description" value="male"> Male<br>
-                            <input id="radio" type="radio" name="Pedestrian_description" value="disabled"> Disabled<br>
-                            <input id="radio" type="radio" name="Pedestrian_description" value="other"> Other<br>
+                            <input id="radio" type="radio" name="pedestrian[description]" value="female"> Female<br>
+                            <input id="radio" type="radio" name="pedestrian[description]" value="male"> Male<br>
+                            <input id="radio" type="radio" name="pedestrian[description]" value="disabled"> Disabled<br>
+                            <input id="radio" type="radio" name="pedestrian[description]" value="other"> Other<br>
                           </div>
                         </div><!-- Col -->
                       </div><!-- Row -->
@@ -221,6 +218,7 @@
                     <button type="submit" class="btn btn-success">Submit</button>
                   </span>
                 </div>
+                <% end %>
               </div>
             </div>
           </div>

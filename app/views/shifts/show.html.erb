@@ -1,5 +1,105 @@
 <p id="notice"><%= notice %></p>
 
+<!--Navheader-->
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="glyphicon glyphicon-road navbar-brand" rel="home" href=<%= pages_path %>> Moving Omaha</a>
+  </div>
+  <div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>Location</li>
+        </ul>
+      </li>
+    </ul>
+    <div class="col-sm-3 col-md-3 pull-right">
+      <div class="navbar-text pull-right">Logged in as <%= current_user.first_name %> <%= current_user.last_name %></div>
+    </div>
+  </div>
+</div>
+<!--welcome message-->
+<div class="container" id="welcome">
+  <div class="text-center">
+    <h1>Welcome, <%= current_user.first_name %></h1>
+    <p class="lead">Thank you for volunteering!<br>
+  </div>
+</div>
+</div><!-- /.container -->
+
+<!--logout and last updated-->
+<div class="container" id="logout_last_updated">
+  <div class="row">
+    <div class="col-md-6  toppad  pull-right col-md-offset-3 ">
+      <%= link_to(' Logout', destroy_user_session_path, :method => :delete, :class => "glyphicon glyphicon-log-out ") %>
+      <br>
+      <p class=" text-info">Last updated at - <%= current_user.updated_at.localtime %></p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+<!-- accordion -->
+<div class="accordion vertical">
+    <ul>
+        <li>
+          <!-- profile panel -->
+            <input type="checkbox" id="checkbox-1" name="checkbox-accordion" />
+            <label for="checkbox-1">Profile</label>
+            <div class="content">
+              <div class="panel panel-info collapse in" id="profile_panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><%= current_user.first_name %></h3>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-3 col-lg-3 " align="center"> <span class="glyphicon glyphicon-user special-icon"></span> </div>
+                    <div class=" col-md-9 col-lg-9 ">
+                      <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                          <td>Name:</td>
+                          <td><%= current_user.first_name %> <%= current_user.last_name %></td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td><%= current_user.email %></td>
+                        </tr>
+                        <td>Contact Us!</td>
+                        <td>(123)456-7890 (Landline)<br><br>(555)456-7890 (Mobile)
+                        </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--user profile panel footer-->
+                <div class="panel-footer" id="profile_panel_footer">
+                  <a href="mailto:email@example.com?Subject=Bike/Ped%20Count" target="_top" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                  <span class="pull-right">
+                    <a href=<%= edit_user_path %> data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                  </span>
+                </div>
+              </div>
+            </div>
+        </li>
+        <!-- profile panel end -->
+      <!-- pedestrians panel end -->
+    </ul>
+    </div>
+    </div>
+  </div>
+</div>
+<!-- accordion end -->
+
+
 <p>
   <strong>User:</strong>
   <% user = User.find(@shift.user_id) %>

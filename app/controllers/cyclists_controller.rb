@@ -19,26 +19,27 @@ class CyclistsController < ApplicationController
   # POST /cyclists.json
   def create
     @cyclist = Cyclist.new
-    if params["cyclist"]["sex"] == "male"
-      if params["cyclist"]["description"] == "with_helmet"
-        @cyclist.male_with_helmet = params["cyclist"]["quantity"]
-      elsif params["cyclist"]["description"] == "without_helmet"
-        @cyclist.male_no_helmet = params["cyclist"]["quantity"] elsif params["cyclist"]["description"] == "sidewalk"
-        @cyclist.male_sidewalk = params["cyclist"]["quantity"]
+      if params["cyclist"]["sex"] == "male"
+        if params["cyclist"]["description"] == "with_helmet"
+          @cyclist.male_with_helmet = params["cyclist"]["quantity"]
+        elsif params["cyclist"]["description"] == "without_helmet"
+          @cyclist.male_no_helmet = params["cyclist"]["quantity"]
+        elsif params["cyclist"]["description"] == "sidewalk"
+          @cyclist.male_sidewalk = params["cyclist"]["quantity"]
+        else
+          @cyclist.male_wrong_way = params["cyclist"]["quantity"]
+        end
       else
-        @cyclist.male_wrong_way = params["cyclist"]["quantity"]
+        if params["cyclist"]["description"] == "with_helmet"
+          @cyclist.female_with_helmet = params["cyclist"]["quantity"]
+        elsif params["cyclist"]["description"] == "without_helmet"
+          @cyclist.female_no_helmet = params["cyclist"]["quantity"]
+        elsif params["cyclist"]["description"] == "sidewalk"
+          @cyclist.female_sidewalk = params["cyclist"]["quantity"]
+        else
+          @cyclist.female_wrong_way = params["cyclist"]["quantity"]
+        end
       end
-    else
-      if params["cyclist"]["description"] == "with_helmet"
-        @cyclist.female_with_helmet = params["cyclist"]["quantity"]
-      elsif params["cyclist"]["description"] == "without_helmet"
-        @cyclist.female_no_helmet = params["cyclist"]["quantity"]
-     elsif params["cyclist"]["description"] == "sidewalk"
-        @cyclist.female_sidewalk = params["cyclist"]["quantity"]
-      else
-        @cyclist.female_wrong_way = params["cyclist"]["quantity"]
-     end
-    end
 
     respond_to do |format|
       if @cyclist.save

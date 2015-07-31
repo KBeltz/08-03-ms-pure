@@ -18,11 +18,20 @@ class PedestriansController < ApplicationController
   # POST /pedestrians
   # POST /pedestrians.json
   def create
-    @pedestrian = Pedestrian.new(pedestrian_params)
+    @pedestrian = Pedestrian.new
+      if params["pedestrian"]["description"] == "male"
+        @pedestrian.male = params["pedestrian"]["quantity"]
+      elsif params["pedestrian"]["description"] == "female"
+        @pedestrian.female = params["pedestrian"]["quantity"]
+      elsif params["pedestrian"]["description"] == "disabled"
+        @pedestrian.disabled = params["pedestrian"]["quantity"]
+      else
+        @pedestrian.other = params["pedestrian"]["quantity"]
+      end
 
     respond_to do |format|
       if @pedestrian.save
-        format.html { redirect_to @pedestrian, notice: 'Pedestrian was successfully created.' }
+        format.html { redirect_to "/profile", notice: 'Pedestrian was successfully created.' }
         format.json { render :show, status: :created, location: @pedestrian }
       else
         format.html { render :new }
