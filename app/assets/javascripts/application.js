@@ -17,4 +17,4 @@
 //= require jquery
 //= require bootstrap-sprockets
 
-$("#form").get(0).reset()
+
