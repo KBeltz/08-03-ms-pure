@@ -3,17 +3,13 @@ ActiveAdmin.register Cyclist do
   actions :all, except: [:create, :edit, :destroy, :new]
   batch_action :destroy, false
 
-  permit_params :female_with_helmet, :female_no_helmet, :female_sidewalk, :female_wrong_way, :male_with_helmet, :male_no_helmet, :male_sidewalk, :male_wrong_way
-
+  permit_params :quantity, :sex, :helmet, :wrong_way
   index do
-    column :female_with_helmet
-    column :female_no_helmet
-    column :female_sidewalk
-    column :female_wrong_way
-    column :male_with_helmet
-    column :male_no_helmet
-    column :male_sidewalk
-    column :male_wrong_way
+    column :quantity
+    column :sex
+    column :helmet
+    column :sidewalk
+    column :wrong_way
     actions
   end
 
