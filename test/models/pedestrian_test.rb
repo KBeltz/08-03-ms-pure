@@ -3,12 +3,12 @@
 # Table name: pedestrians
 #
 #  id         :integer          not null, primary key
-#  female     :integer
-#  male       :integer
-#  disabled   :integer
-#  other      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  quantity   :integer
+#  sex        :boolean
+#  disabled   :boolean
+#  other      :boolean
 #
 
 require 'test_helper'
