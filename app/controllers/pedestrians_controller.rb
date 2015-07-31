@@ -18,16 +18,7 @@ class PedestriansController < ApplicationController
   # POST /pedestrians
   # POST /pedestrians.json
   def create
-    @pedestrian = Pedestrian.new
-      if params["pedestrian"]["description"] == "male"
-        @pedestrian.male = params["pedestrian"]["quantity"]
-      elsif params["pedestrian"]["description"] == "female"
-        @pedestrian.female = params["pedestrian"]["quantity"]
-      elsif params["pedestrian"]["description"] == "disabled"
-        @pedestrian.disabled = params["pedestrian"]["quantity"]
-      else
-        @pedestrian.other = params["pedestrian"]["quantity"]
-      end
+    @pedestrian = Pedestrian.new(pedestrian_params)
 
     respond_to do |format|
       if @pedestrian.save
@@ -72,6 +63,6 @@ class PedestriansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedestrian_params
-      params.require(:pedestrian).permit(:female, :male, :disabled, :other)
+      params.require(:pedestrian).permit(:quantity, :sex, :disabled, :other)
     end
 end

@@ -17,16 +17,20 @@
   </div>
   <div class="field">
     <%= f.label :sex %><br>
-    <%= f.radio_button :sex, "male", :checked => true %> Male
-    <%= f.radio_button :sex, "female", :checked => false %> Female
+    <%= f.radio_button(:sex, true) %>
+    <%= f.label(:sex_male, "Male") %>
+    <%= f.radio_button(:sex, false) %>
+    <%= f.label(:sex_female, "Female") %>
   </div>
   <div class="field">
-    <%= f.label :disabled %><br>
-    <%= f.radio_button :disabled, "disabled", :checked => true %> Disabled
-    <%= f.radio_button :disabled, "not_disabled", :checked => false %> Not Disabled
+    <%= f.label :disabled, "Disabled?" %><br>
+    <%= f.radio_button(:disabled, true) %>
+    <%= f.label(:disabled_true, "Yes") %>
+    <%= f.radio_button(:disabled, false) %>
+    <%= f.label(:disabled_false, "No") %>
   </div>
   <div class="field">
-    <%= f.label :other %>
+    <%= f.label :other, "Other (e.g., rollerblades, segways)" %>
     <%= f.check_box :other %>
   </div>
   <div class="actions">
