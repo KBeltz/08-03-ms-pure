@@ -4,7 +4,7 @@ ActiveAdmin.register Shift do
 
   form do |f|
     f.inputs do
-      f.input :user, :member_label => :last_name
+      f.input :user
       f.input :location, :member_label => :location_name
       f.input :start_time
       f.input :end_time
