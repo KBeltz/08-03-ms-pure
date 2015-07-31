@@ -112,11 +112,7 @@
   <%= location.location_name %>
 </p>
 
-<p>
-  <strong>Weather:</strong>
-  <% weather = Weather.find(@shift.weather_id) %>
-  <%= weather.weather.capitalize %>
-</p>
+
 
 <p>
   <strong>Start Time:</strong>
@@ -130,3 +126,101 @@
 
 <%= link_to 'Edit', edit_shift_path(@shift) %> |
 <%= link_to 'Back', shifts_path %>
+
+
+<!-- cyclists panel -->
+<li>
+    <input type="checkbox" id="checkbox-3" name="checkbox-accordion" />
+    <label for="checkbox-3">Cyclists</label>
+    <div class="content">
+      <div class="panel panel-info collapse in" id="profile_panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Cyclist Data</h3>
+        </div>
+
+        <div class="panel-body">
+          <%= form_tag("/cyclists", method: "post") do %>
+
+          <div class="row">
+            <div class=" col-md-9 col-lg-9 ">
+              <h3 class="panel-title">Quantity</h3>
+              <input type="number" min="0" name="cyclist[quantity]"><br>
+              <br>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <h3 class="panel-title">Sex</h3><br>
+                    <input id="radio" type="radio" name="cyclist[sex]" value="male"> Male<br>
+                    <input id="radio" type="radio" name="cyclist[sex]" value="female"> Female<br>
+                  </div>
+                </div><!-- Col -->
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <h3 class="panel-title">Description</h3><br>
+                    <input id="radio" type="radio" name="cyclist[description]" value="with_helmet"> With Helmet<br>
+                    <input id="radio" type="radio" name="cyclist[description]" value="without_helmet"> Without Helmet<br>
+                    <input id="radio" type="radio" name="cyclist[description]" value="sidewalk"> Sidewalk<br>
+                    <input id="radio" type="radio" name="cyclist[description]" value="wrong_way"> Wrong Way<br>
+                  </div>
+                </div><!-- Col -->
+              </div><!-- Row -->
+            </div>
+          </div>
+        <!-- cyclist panel footer-->
+        <div class="panel-footer" id="profile_panel_footer">
+          <a href="mailto:email@example.com?Subject=Bike/Ped%20Count" target="_top" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+          <span class="pull-right">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+<!-- cyclists panel end -->
+<!-- pedestrians panel -->
+<li>
+    <input type="checkbox" id="checkbox-4" name="checkbox-accordion" />
+    <label for="checkbox-4">Pedestrians</label>
+
+    <div class="content">
+      <div class="panel panel-info collapse in" id="profile_panel">
+        <div class="panel-heading">
+          <h3 class="panel-title">Pedestrian Data</h3>
+        </div>
+
+        <div class="panel-body">
+          <%= form_tag("/pedestrians", method: "post") do %>
+          <div class="row">
+            <div class=" col-md-9 col-lg-9 ">
+              <h3 class="panel-title">Quantity</h3>
+              <input type="number" min="0" name="pedestrian[quantity]"><br>
+              <br>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <h3 class="panel-title">Description</h3><br>
+                    <input id="radio" type="radio" name="pedestrian[description]" value="female"> Female<br>
+                    <input id="radio" type="radio" name="pedestrian[description]" value="male"> Male<br>
+                    <input id="radio" type="radio" name="pedestrian[description]" value="disabled"> Disabled<br>
+                    <input id="radio" type="radio" name="pedestrian[description]" value="other"> Other<br>
+                  </div>
+                </div><!-- Col -->
+              </div><!-- Row -->
+            </div>
+          </div>
+        <!-- pedestrian panel footer-->
+        <div class="panel-footer" id="profile_panel_footer">
+          <a href="mailto:email@example.com?Subject=Bike/Ped%20Count" target="_top" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+          <span class="pull-right">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </span>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</li>
+<!-- pedestrians panel end -->
