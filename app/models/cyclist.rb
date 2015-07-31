@@ -14,4 +14,6 @@
 
 class Cyclist < ActiveRecord::Base
   belongs_to :shift
+
+  validates :quantity, presence: true
 end

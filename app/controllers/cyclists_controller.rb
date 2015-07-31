@@ -19,7 +19,7 @@ class CyclistsController < ApplicationController
   # POST /cyclists.json
   def create
     @cyclist = Cyclist.new(cyclist_params)
-
+    
     respond_to do |format|
       if @cyclist.save
         format.html { redirect_to "/profile", notice: 'Cyclist was successfully created.' }
