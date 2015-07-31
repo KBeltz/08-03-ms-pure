@@ -12,36 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :female_with_helmet %><br>
-    <%= f.number_field :female_with_helmet %>
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
   </div>
   <div class="field">
-    <%= f.label :female_no_helmet %><br>
-    <%= f.number_field :female_no_helmet %>
+    <%= f.label :sex %><br>
+    <%= f.radio_button :sex, "male", :checked => true %> Male
+    <%= f.radio_button :sex, "female", :checked => false%> Female
   </div>
   <div class="field">
-    <%= f.label :female_sidewalk %><br>
-    <%= f.number_field :female_sidewalk %>
+    <%= f.label :helmet %><br>
+    <%= f.radio_button :helmet, "helmet", :checked => true %> Helmet
+    <%= f.radio_button :helmet, "no_helmet", :checked => false %> No Helmet
   </div>
   <div class="field">
-    <%= f.label :female_wrong_way %><br>
-    <%= f.number_field :female_wrong_way %>
+    <%= f.label :sidewalk %><br>
+    <%= f.radio_button :sidewalk, "sidewalk", :checked => true %> Sidewalk
+    <%= f.radio_button :sidewalk, "no_sidewalk", :checked => false %> Not on Sidewalk
   </div>
   <div class="field">
-    <%= f.label :male_with_helmet %><br>
-    <%= f.number_field :male_with_helmet %>
-  </div>
-  <div class="field">
-    <%= f.label :male_no_helmet %><br>
-    <%= f.number_field :male_no_helmet %>
-  </div>
-  <div class="field">
-    <%= f.label :male_sidewalk %><br>
-    <%= f.number_field :male_sidewalk %>
-  </div>
-  <div class="field">
-    <%= f.label :male_wrong_way %><br>
-    <%= f.number_field :male_wrong_way %>
+    <%= f.label :wrong_way %><br>
+    <%= f.radio_button :wrong_way, "wrong_way", :checked => true %> Wrong Way
+    <%= f.radio_button :wrong_way, "right_way", :checked => false %> Correct Way
   </div>
   <div class="actions">
     <%= f.submit %>
