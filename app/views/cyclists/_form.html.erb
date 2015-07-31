@@ -17,23 +17,31 @@
   </div>
   <div class="field">
     <%= f.label :sex %><br>
-    <%= f.radio_button :sex, "male", :checked => true %> Male
-    <%= f.radio_button :sex, "female", :checked => false%> Female
+    <%= f.radio_button(:sex, true) %>
+    <%= f.label(:sex_male, "Male") %>
+    <%= f.radio_button(:sex, false) %>
+    <%= f.label(:sex_female, "Female") %>
   </div>
   <div class="field">
-    <%= f.label :helmet %><br>
-    <%= f.radio_button :helmet, "helmet", :checked => true %> Helmet
-    <%= f.radio_button :helmet, "no_helmet", :checked => false %> No Helmet
+    <%= f.label :helmet, "Wearing a helmet?" %><br>
+    <%= f.radio_button(:helmet, true) %>
+    <%= f.label(:helmet_true, "Yes") %>
+    <%= f.radio_button(:helmet, false) %>
+    <%= f.label(:helmet_false, "No") %>
   </div>
   <div class="field">
-    <%= f.label :sidewalk %><br>
-    <%= f.radio_button :sidewalk, "sidewalk", :checked => true %> Sidewalk
-    <%= f.radio_button :sidewalk, "no_sidewalk", :checked => false %> Not on Sidewalk
+    <%= f.label :sidewalk, "On the Sidewalk?" %><br>
+    <%= f.radio_button(:sidewalk, true) %>
+    <%= f.label(:sidewalk_true, "Yes") %>
+    <%= f.radio_button(:sidewalk, false) %>
+    <%= f.label(:sidewalk_false, "No") %>
   </div>
   <div class="field">
-    <%= f.label :wrong_way %><br>
-    <%= f.radio_button :wrong_way, "wrong_way", :checked => true %> Wrong Way
-    <%= f.radio_button :wrong_way, "right_way", :checked => false %> Correct Way
+    <%= f.label :wrong_way, "Going the wrong way?" %><br>
+    <%= f.radio_button(:wrong_way, true) %>
+    <%= f.label(:wrong_way_true, "Yes") %>
+    <%= f.radio_button(:wrong_way, false) %>
+    <%= f.label(:wrong_way_false, "No") %>
   </div>
   <div class="actions">
     <%= f.submit %>
