@@ -6,7 +6,13 @@ ActiveAdmin.register Cyclist do
   permit_params :quantity, :sex, :helmet, :wrong_way
   index do
     column :quantity
-    column :sex
+    column :sex do |cyclist|
+      if cyclist.sex == true
+        "Male"
+      else
+        "Female"
+      end
+    end
     column :helmet
     column :sidewalk
     column :wrong_way
