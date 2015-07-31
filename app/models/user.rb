@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
   has_many :shifts
 
   after_create :update_full_name
+  after_save :update_full_name
 
   def update_full_name
     self.update(full_name: (first_name + ' ' + last_name))
