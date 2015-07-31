@@ -13,7 +13,7 @@
     <a class="glyphicon glyphicon-road navbar-brand" rel="home" href=<%= pages_path %>> Moving Omaha</a>
   </div>
   <div class="collapse navbar-collapse">
-    
+
     <div class="col-sm-3 col-md-3 pull-right">
       <div class="navbar-text pull-right">Logged in as <%= current_user.first_name %> <%= current_user.last_name %></div>
     </div>
@@ -23,7 +23,7 @@
 <div class="container" id="welcome">
   <div class="text-center">
     <h1>Welcome, <%= current_user.first_name %></h1>
-    <p class="lead">Thank you for volunteering!<br>
+    <p class="lead">Thank you for volunteering!
   </div>
 </div>
 </div><!-- /.container -->
@@ -59,7 +59,15 @@
                 <div class="row">
                   <div class=" col-md-9 col-lg-9 ">
                     <h3 class="panel-title">Quantity</h3>
-                    <input type="number" min="0" name="cyclist[quantity]"><br>
+                      <select name="cyclist[quantity]">
+                      <% x = 1 %>
+                        <%= while x != 11 do %>
+                          <option value="x">
+                            <%= x %>
+                          </option>
+                          <% x += 1 %>
+                        <% end %>
+                      </select>
                     <br>
                     <div class="row">
                       <div class="col-sm-6">
@@ -73,10 +81,10 @@
                       <div class="col-sm-6">
                         <div class="form-group">
                           <h3 class="panel-title">Description</h3><br>
-                          <input id="radio" type="radio" name="cyclist[description]" value="with_helmet"> With Helmet<br>
-                          <input id="radio" type="radio" name="cyclist[description]" value="without_helmet"> Without Helmet<br>
-                          <input id="radio" type="radio" name="cyclist[description]" value="sidewalk"> Sidewalk<br>
-                          <input id="radio" type="radio" name="cyclist[description]" value="wrong_way"> Wrong Way<br>
+                          <input id="radio" type="checkbox" name="cyclist[description]" value="with_helmet"> With Helmet<br>
+                          <input id="radio" type="checkbox" name="cyclist[description]" value="without_helmet"> Without Helmet<br>
+                          <input id="radio" type="checkbox" name="cyclist[description]" value="sidewalk"> Sidewalk<br>
+                          <input id="radio" type="checkbox" name="cyclist[description]" value="wrong_way"> Wrong Way<br>
                         </div>
                       </div><!-- Col -->
                     </div><!-- Row -->
@@ -111,16 +119,29 @@
                 <div class="row">
                   <div class=" col-md-9 col-lg-9 ">
                     <h3 class="panel-title">Quantity</h3>
-                    <input type="number" min="0" name="pedestrian[quantity]"><br>
-                    <br>
+                      <select name="cyclist[quantity]">
+                      <% x = 1 %>
+                        <%= while x != 11 do %>
+                          <option value="x">
+                            <%= x %>
+                          </option>
+                          <% x += 1 %>
+                        <% end %>
+                      </select>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
+                          <h3 class="panel-title">Sex</h3><br>
+                          <input id="radio" type="radio" name="pedestrian[sex]" value="male"> Male<br>
+                          <input id="radio" type="radio" name="pedestrian[sex]" value="female"> Female<br>
+                        </div>
+                      </div><!-- Col -->
+
+                      <div class="col-sm-6">
+                        <div class="form-group">
                           <h3 class="panel-title">Description</h3><br>
-                          <input id="radio" type="radio" name="pedestrian[description]" value="female"> Female<br>
-                          <input id="radio" type="radio" name="pedestrian[description]" value="male"> Male<br>
-                          <input id="radio" type="radio" name="pedestrian[description]" value="disabled"> Disabled<br>
-                          <input id="radio" type="radio" name="pedestrian[description]" value="other"> Other<br>
+                          <input id="radio" type="checkbox" name="pedestrian[description]" value="disabled"> Disabled<br>
+                          <input id="radio" type="checkbox" name="pedestrian[description]" value="other"> Other<br>
                         </div>
                       </div><!-- Col -->
                     </div><!-- Row -->
