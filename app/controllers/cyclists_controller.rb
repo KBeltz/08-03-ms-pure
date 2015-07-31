@@ -18,11 +18,32 @@ class CyclistsController < ApplicationController
   # POST /cyclists
   # POST /cyclists.json
   def create
-    @cyclist = Cyclist.new(cyclist_params)
+    @cyclist = Cyclist.new
+      if params["cyclist"]["sex"] == "male"
+        if params["cyclist"]["description"] == "with_helmet"
+          @cyclist.male_with_helmet = params["cyclist"]["quantity"]
+        elsif params["cyclist"]["description"] == "without_helmet"
+          @cyclist.male_no_helmet = params["cyclist"]["quantity"]
+        elsif params["cyclist"]["description"] == "sidewalk"
+          @cyclist.male_sidewalk = params["cyclist"]["quantity"]
+        else
+          @cyclist.male_wrong_way = params["cyclist"]["quantity"]
+        end
+      else
+        if params["cyclist"]["description"] == "with_helmet"
+          @cyclist.female_with_helmet = params["cyclist"]["quantity"]
+        elsif params["cyclist"]["description"] == "without_helmet"
+          @cyclist.female_no_helmet = params["cyclist"]["quantity"]
+        elsif params["cyclist"]["description"] == "sidewalk"
+          @cyclist.female_sidewalk = params["cyclist"]["quantity"]
+        else
+          @cyclist.female_wrong_way = params["cyclist"]["quantity"]
+        end
+      end
 
     respond_to do |format|
       if @cyclist.save
-        format.html { redirect_to @cyclist, notice: 'Cyclist was successfully created.' }
+        format.html { redirect_to "/profile", notice: 'Cyclist was successfully created.' }
         format.json { render :show, status: :created, location: @cyclist }
       else
         format.html { render :new }
