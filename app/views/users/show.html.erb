@@ -110,7 +110,7 @@
                             <% counts.each do |a| %>
                             <% count_location = Location.find(a.location_id) %>
                             <p>
-                              <%= count_location.location_name %> from <a href="<%= a.id %>"><%= a.start_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %> to <%= a.end_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %></a>
+                              <%= count_location.location_name %> from <a href="shifts/<%= a.id %>"><%= a.start_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %> to <%= a.end_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %></a>
                             </p>
                           <% end %>
                         <br>
