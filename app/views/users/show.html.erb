@@ -104,22 +104,22 @@
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                       <h3 class="panel-title">What shift will this data be associated with?</h3>
-                      <!-- should be pulling from database, not hard-coded -->
-                        <select>
-                            <option></option>
-                            <option value="Cloudy">Shift 1</option>
-                            <option value="Sunny">Shift 2</option>
-                            <option value="Rainy">Shift 3</option>
-                        </select>
-                        <br><br>
+                      <% volunteer = User.find(current_user.id) %>
+                      <% count = volunteer.shifts %>
+                      <select>
+                        <% count.each do |a| %>
+                          <option value="<%= a.id %>"><%= a.start_time.localtime %></option>
+                        <% end %>
+                      </select>
+                      <br><br>
                     </div>
                     <div class=" col-md-9 col-lg-9 ">
                       <h3 class="panel-title">What is the weather like today?</h3>
+                      <% forecasts = Weather.all %>
                         <select>
-                            <option></option>
-                            <option value="Cloudy">Cloudy with a chance of meatballs</option>
-                            <option value="Sunny">Sunny</option>
-                            <option value="Rainy">Rainy</option>
+                          <% forecasts.each do |a| %>
+                            <option value="<%= a.id %>"><%= a.weather %></option>
+                          <% end %>
                         </select>
                         <br><br>
                     </div>
