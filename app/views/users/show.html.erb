@@ -98,24 +98,30 @@
             <input type="checkbox" id="checkbox-2" name="checkbox-accordion" />
             <label for="checkbox-2">Weather</label>
             <div class="content">
-                <h3>What's the weather like today?</h3>
-                <select>
-                    <option></option>
-                    <option value="Cloudy">Cloudy with a chance of meatballs</option>
-                    <option value="Sunny">Sunny</option>
-                    <option value="Rainy">Rainy</option>
-                </select>
-                <br><br>
-                <div class="panel-footer">
+              <div class="panel panel-info collapse in" id="profile_panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title">What's the weather like today?</h3>
+                </div>
+                <div class="panel-body">
                   <div class="row">
-                    <div class="col-sm-12">
-                      <div class="pull-right">
-                        <button type="submit" class="btn btn-success">Submit</button>
-                      </div>
+                    <div class=" col-md-9 col-lg-9 ">
+                        <select>
+                            <option></option>
+                            <option value="Cloudy">Cloudy with a chance of meatballs</option>
+                            <option value="Sunny">Sunny</option>
+                            <option value="Rainy">Rainy</option>
+                        </select>
+                        <br><br>
                     </div>
                   </div>
-                </div><!-- Panel Footer -->
-            </div>
+                </div>
+                <!--user profile panel footer-->
+                <div class="panel-footer" id="profile_panel_footer">
+                  <a href="mailto:email@example.com?Subject=Bike/Ped%20Count" target="_top" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                  <span class="pull-right">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                  </span>
+                </div>
         </li>
         <li>
             <input type="checkbox" id="checkbox-3" name="checkbox-accordion" />
@@ -198,149 +204,3 @@
     </ul>
 </div>
 <!-- accordion end -->
-
-
-
-
-
-
-
-<!--user profile panel-->
-<br><br><br><br>
-      <div class="panel panel-info collapse in" id="profile_panel">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= current_user.first_name %></h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-3 col-lg-3 " align="center"> <span class="glyphicon glyphicon-user special-icon"></span> </div>
-            <div class=" col-md-9 col-lg-9 ">
-              <table class="table table-user-information">
-                <tbody>
-                <tr>
-                  <td>Name:</td>
-                  <td><%= current_user.first_name %> <%= current_user.last_name %></td>
-                </tr>
-                <tr>
-                  <td>Email</td>
-                  <td><%= current_user.email %></td>
-                </tr>
-                <td>Contact Us!</td>
-                <td>(123)456-7890 (Landline)<br><br>(555)456-7890 (Mobile)
-                </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <!--user profile panel footer-->
-        <div class="panel-footer" id="profile_panel_footer">
-          <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-          <span class="pull-right">
-            <a href=<%= edit_user_path %> data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container collapse" id="bike_ped_counter">
-  <button class="btn btn-default" data-toggle="collapse" data-target="#bike"> Cyclists</button>
-  <button class="btn btn-default" data-toggle="collapse" data-target="#ped">Ped</button>
-  <br><br>
-  <div class="alert alert-warning">
-    The quantity field is for indicating how many people fit the description you are giving.
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="form-group">
-        <label class="control-label">Quantity</label><br>
-        <input type="number" name="quantity"><br>
-      </div>
-      </div>
-    </div><!-- Col -->
-</div>
-
-<!--counter forms-->
-<div class="container collapse" id="counter">
-  <h1>Counter forms</h1>
-  <p>Use these forms to input your counts</p>
-
-  <div class="panel panel-default collapse" id="bike">
-    <div class="panel-heading">
-      <h3 class="panel-title">Cyclists</h3>
-    </div>
-    <div class="panel-body">
-      <form>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label class="control-label">Sex</label><br>
-              <input type="radio" name="sex" value="male"> Male<br>
-              <input type="radio" name="sex" value="female"> Female<br>
-            </div>
-          </div><!-- Col -->
-
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label class="control-label">Description</label><br>
-              <input type="radio" name="description" value="with helmet"> With Helmet<br>
-              <input type="radio" name="description" value="without helmet"> Without Helmet<br>
-              <input type="radio" name="description" value="sidewalk"> Sidewalk<br>
-              <input type="radio" name="description" value="wrong_way"> Wrong Way<br>
-            </div>
-          </div><!-- Col -->
-        </div><!-- Row -->
-
-        <div class="panel-footer">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="pull-right">
-                <button class="btn btn-danger" type="reset">Reset</button>
-                <button type="submit" class="btn btn-success">Submit</button>
-              </div>
-            </div>
-          </div>
-        </div><!-- Panel Footer -->
-
-
-      </form>
-    </div>
-  </div>
-
-  <div class="panel panel-default collapse" id="ped">
-    <div class="panel-heading">
-      <h3 class="panel-title">Pedestrians</h3>
-    </div>
-    <div class="panel-body">
-      <div class="alert alert-warning">
-        Please choose one.
-      </div>
-      <form>
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <label class="control-label">Pedestrian</label><br>
-              <input type="radio" name="Pedestrian_description" value="female"> Female<br>
-              <input type="radio" name="Pedestrian_description" value="male"> Male<br>
-              <input type="radio" name="Pedestrian_description" value="desabled"> Disabled<br>
-              <input type="radio" name="Pedestrian_description" value="other"> Other<br>
-            </div>
-          </div><!-- Col -->
-        </div><!-- Row -->
-        <div class="panel-footer">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="pull-right">
-                <button class="btn btn-danger" type="reset">Reset</button>
-                <button type="submit" class="btn btn-success">Submit</button>
-              </div>
-            </div>
-          </div>
-        </div><!-- Panel Footer -->
-      </form>
-    </div>
-  </div>
-</div>
