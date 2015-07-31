@@ -147,6 +147,8 @@
                 </div>
 
                 <div class="panel-body">
+                  <%= form_tag("/cyclists", method: "post") do %>
+
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                       <h3 class="panel-title">Quantity</h3>
@@ -156,18 +158,18 @@
                         <div class="col-sm-6">
                           <div class="form-group">
                             <h3 class="panel-title">Sex</h3><br>
-                            <input id="radio" type="radio" name="sex" value="male"> Male<br>
-                            <input id="radio" type="radio" name="sex" value="female"> Female<br>
+                            <input id="radio" type="radio" name="cyclist[sex]" value="male"> Male<br>
+                            <input id="radio" type="radio" name="cyclist[sex]" value="female"> Female<br>
                           </div>
                         </div><!-- Col -->
 
                         <div class="col-sm-6">
                           <div class="form-group">
                             <h3 class="panel-title">Description</h3><br>
-                            <input id="radio" type="radio" name="description" value="with helmet"> With Helmet<br>
-                            <input id="radio" type="radio" name="description" value="without helmet"> Without Helmet<br>
-                            <input id="radio" type="radio" name="description" value="sidewalk"> Sidewalk<br>
-                            <input id="radio" type="radio" name="description" value="wrong_way"> Wrong Way<br>
+                            <input id="radio" type="radio" name="cyclist[description]" value="with_helmet"> With Helmet<br>
+                            <input id="radio" type="radio" name="cyclist[description]" value="without_helmet"> Without Helmet<br>
+                            <input id="radio" type="radio" name="cyclist[description]" value="sidewalk"> Sidewalk<br>
+                            <input id="radio" type="radio" name="cyclist[description]" value="wrong_way"> Wrong Way<br>
                           </div>
                         </div><!-- Col -->
                       </div><!-- Row -->
@@ -179,6 +181,7 @@
                   <span class="pull-right">
                     <button type="submit" class="btn btn-success">Submit</button>
                   </span>
+                  <% end %>
                 </div>
               </div>
             </div>
