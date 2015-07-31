@@ -50,7 +50,89 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
 
+<!-- accordion -->
+<div class="accordion vertical">
+    <ul>
+        <li>
+            <input type="checkbox" id="checkbox-1" name="checkbox-accordion" />
+            <label for="checkbox-1">Profile</label>
+            <div class="content">
+              <div class="panel panel-info collapse in" id="profile_panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><%= current_user.first_name %></h3>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-3 col-lg-3 " align="center"> <span class="glyphicon glyphicon-user special-icon"></span> </div>
+                    <div class=" col-md-9 col-lg-9 ">
+                      <table class="table table-user-information">
+                        <tbody>
+                        <tr>
+                          <td>Name:</td>
+                          <td><%= current_user.first_name %> <%= current_user.last_name %></td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td><%= current_user.email %></td>
+                        </tr>
+                        <td>Contact Us!</td>
+                        <td>(123)456-7890 (Landline)<br><br>(555)456-7890 (Mobile)
+                        </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--user profile panel footer-->
+                <div class="panel-footer" id="profile_panel_footer">
+                  <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                  <span class="pull-right">
+                    <a href=<%= edit_user_path %> data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                  </span>
+                </div>
+              </div>
+            </div>
+        </li>
+        <li>
+            <input type="checkbox" id="checkbox-2" name="checkbox-accordion" />
+            <label for="checkbox-2">Weather</label>
+            <div class="content">
+                <h3>Totally another one right here</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec posuere lorem. Pellentesque hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum. Mauris semper ipsum sit amet metus semper malesuada. Donec vel est justo, ac porta diam.</p>
+                <p>In ut est in orci commodo blandit. Cras rhoncus ultricies augue. Proin quam odio, venenatis ut tempus tristique, aliquet in velit. Pellentesque volutpat facilisis orci, ut congue mi rhoncus at. Nullam vehicula dignissim neque, sed rhoncus magna ultricies et.</p>
+            </div>
+        </li>
+        <li>
+            <input type="checkbox" id="checkbox-3" name="checkbox-accordion" />
+            <label for="checkbox-3">Cyclists</label>
+            <div class="content">
+                <h3>I think I can go on forever</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec posuere lorem. Pellentesque hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum. Mauris semper ipsum sit amet metus semper malesuada. Donec vel est justo, ac porta diam.</p>
+                <p>In ut est in orci commodo blandit. Cras rhoncus ultricies augue. Proin quam odio, venenatis ut tempus tristique, aliquet in velit. Pellentesque volutpat facilisis orci, ut congue mi rhoncus at. Nullam vehicula dignissim neque, sed rhoncus magna ultricies et.</p>
+            </div>
+        </li>
+        <li>
+            <input type="checkbox" id="checkbox-4" name="checkbox-accordion" />
+            <label for="checkbox-4">Pedestrians</label>
+            <div class="content">
+                <h3>I was wrong, I'm done</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec posuere lorem. Pellentesque hendrerit, lorem luctus porttitor vestibulum, eros sapien mattis libero, euismod congue neque nisi at ipsum. Mauris semper ipsum sit amet metus semper malesuada. Donec vel est justo, ac porta diam.</p>
+                <p>In ut est in orci commodo blandit. Cras rhoncus ultricies augue. Proin quam odio, venenatis ut tempus tristique, aliquet in velit. Pellentesque volutpat facilisis orci, ut congue mi rhoncus at. Nullam vehicula dignissim neque, sed rhoncus magna ultricies et.</p>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- accordion end -->
+
+
+
+
+
+
+
 <!--user profile panel-->
+<br><br><br><br>
       <div class="panel panel-info collapse in" id="profile_panel">
         <div class="panel-heading">
           <h3 class="panel-title"><%= current_user.first_name %></h3>
