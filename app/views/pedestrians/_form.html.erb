@@ -12,20 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :female %><br>
-    <%= f.number_field :female %>
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
   </div>
   <div class="field">
-    <%= f.label :male %><br>
-    <%= f.number_field :male %>
+    <%= f.label :sex %><br>
+    <%= f.radio_button(:sex, true) %>
+    <%= f.label(:sex_male, "Male") %>
+    <%= f.radio_button(:sex, false) %>
+    <%= f.label(:sex_female, "Female") %>
   </div>
   <div class="field">
-    <%= f.label :disabled %><br>
-    <%= f.number_field :disabled %>
+    <%= f.label :disabled, "Disabled?" %><br>
+    <%= f.radio_button(:disabled, true) %>
+    <%= f.label(:disabled_true, "Yes") %>
+    <%= f.radio_button(:disabled, false) %>
+    <%= f.label(:disabled_false, "No") %>
   </div>
   <div class="field">
-    <%= f.label :other %><br>
-    <%= f.number_field :other %>
+    <%= f.label :other, "Other (e.g., rollerblades, segways)" %>
+    <%= f.check_box :other %>
   </div>
   <div class="actions">
     <%= f.submit %>

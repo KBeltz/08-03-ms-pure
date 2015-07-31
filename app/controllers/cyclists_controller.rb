@@ -18,29 +18,8 @@ class CyclistsController < ApplicationController
   # POST /cyclists
   # POST /cyclists.json
   def create
-    @cyclist = Cyclist.new
-      if params["cyclist"]["sex"] == "male"
-        if params["cyclist"]["description"] == "with_helmet"
-          @cyclist.male_with_helmet = params["cyclist"]["quantity"]
-        elsif params["cyclist"]["description"] == "without_helmet"
-          @cyclist.male_no_helmet = params["cyclist"]["quantity"]
-        elsif params["cyclist"]["description"] == "sidewalk"
-          @cyclist.male_sidewalk = params["cyclist"]["quantity"]
-        else
-          @cyclist.male_wrong_way = params["cyclist"]["quantity"]
-        end
-      else
-        if params["cyclist"]["description"] == "with_helmet"
-          @cyclist.female_with_helmet = params["cyclist"]["quantity"]
-        elsif params["cyclist"]["description"] == "without_helmet"
-          @cyclist.female_no_helmet = params["cyclist"]["quantity"]
-        elsif params["cyclist"]["description"] == "sidewalk"
-          @cyclist.female_sidewalk = params["cyclist"]["quantity"]
-        else
-          @cyclist.female_wrong_way = params["cyclist"]["quantity"]
-        end
-      end
-
+    @cyclist = Cyclist.new(cyclist_params)
+    
     respond_to do |format|
       if @cyclist.save
         format.html { redirect_to "/profile", notice: 'Cyclist was successfully created.' }
@@ -84,6 +63,6 @@ class CyclistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cyclist_params
-      params.require(:cyclist).permit(:female_with_helmet, :female_no_helmet, :female_sidewalk, :female_wrong_way, :male_with_helmet, :male_no_helmet, :male_sidewalk, :male_wrong_way)
+      params.require(:cyclist).permit(:quantity, :sex, :helmet, :sidewalk, :wrong_way)
     end
 end

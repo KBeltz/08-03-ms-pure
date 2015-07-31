@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/contact" => "pages#contact", :as => "contact"
 
   get "/instructions" => "users#instructions"
+  get "/users" => "pages#home"
 
   get "/weather" => "weathers#index"
 

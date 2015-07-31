@@ -3,39 +3,48 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
-      end
-    end
+    # div class: "blank_slate_container", id: "dashboard_default_message" do
+    #   span class: "blank_slate" do
+    #     span I18n.t("active_admin.dashboard_welcome.welcome")
+    #     small I18n.t("active_admin.dashboard_welcome.call_to_action")
+    #   end
+    # end
 
-    columns do
+    # columns do
 
-      column do
-        panel "Info" do
-          para "Welcome to ActiveAdmin."
-        end
-      end
-    end
+      # column do
+      #   panel "Info" do
+      #     para "Welcome to ActiveAdmin."
+      #   end
+      # end
+    # end
 
       section "Recent Cyclist Data" do
         table_for Cyclist.order("created_at desc").limit(5) do
-          column :female_with_helmet
-          column :female_no_helmet
-          column :female_sidewalk
-          column :female_wrong_way
-          column :male_with_helmet
-          column :male_no_helmet
-          column :male_sidewalk
-          column :male_wrong_way
+          column :quantity
+          column :sex do |cyclist|
+            if cyclist.sex == true
+              "Male"
+            else
+              "Female"
+            end
+          end
+          column :helmet
+          column :sidewalk
+          column :wrong_way
         end
       end
 
       section "Recent Pedestrian Data" do
         table_for Pedestrian.order("created_at desc").limit(5) do
-          column :female
-          column :male
+          column :quantity
+          column :sex do |cyclist|
+            if cyclist.sex == true
+              "Male"
+            else
+              "Female"
+            end
+          end
           column :disabled
           column :other
         end
