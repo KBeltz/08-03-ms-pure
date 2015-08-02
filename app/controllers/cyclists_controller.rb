@@ -19,10 +19,10 @@ class CyclistsController < ApplicationController
   # POST /cyclists.json
   def create
     @cyclist = Cyclist.new(cyclist_params)
-    
+
     respond_to do |format|
       if @cyclist.save
-        format.html { redirect_to "/profile", notice: 'Cyclist was successfully created.' }
+        format.html { redirect_to "/shifts/#{params['shift']['id']}", notice: 'Cyclist was successfully created.' }
         format.json { render :show, status: :created, location: @cyclist }
       else
         format.html { render :new }
