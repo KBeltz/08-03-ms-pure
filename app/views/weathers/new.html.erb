@@ -1,0 +1,83 @@
+<!--Navheader-->
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="glyphicon glyphicon-road navbar-brand" rel="home" href="<%= pages_path %>"> MovingOmaha</a>
+  </div>
+  <div class="collapse navbar-collapse">
+
+    <div class="col-sm-3 col-md-3 pull-right">
+      <div class="navbar-text pull-right">Logged in as <%= current_user.first_name %> <%= current_user.last_name %></div>
+    </div>
+  </div>
+</div>
+<!--welcome message-->
+<div class="container" id="welcome">
+  <div class="text-center">
+    <h1>Welcome, <%= current_user.first_name %></h1>
+    <p class="lead">Thank you for volunteering!</p>
+  </div>
+</div>
+<!--logout and last updated-->
+<div class="container" id="logout_last_updated">
+  <div class="row">
+    <div class="col-md-6  toppad  pull-right col-md-offset-3 ">
+      <%= link_to(' Logout', destroy_user_session_path, :method => :delete, :class => "glyphicon glyphicon-log-out ") %>
+      <br>
+      <p class=" text-info">Last updated at - <%= current_user.updated_at.localtime %></p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+
+
+      <!-- accordion -->
+      <div class="accordion vertical">
+        <ul>
+          <!-- shift panel -->
+          <li>
+            <input type="checkbox" checked="checked" id="checkbox-2" name="checkbox-accordion" />
+            <label for="checkbox-2">Shift Weather</label>
+            <div class="content">
+              <div class="panel panel-info collapse in" id="profile_panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title">What's the weather for your shift?</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class=" col-md-9 col-lg-9 ">
+                      <div class="text-center">
+                        <p class="lead">
+                          <%= form_tag("/weather", method: "post") do %>
+                          <select name="weather[id]">
+                            <% @weather.each do |weather| %>
+                            <option value="<%= weather.id %>"><%= weather.weather %></option>
+                            <% end %>
+                          </select>
+                          <br><br>
+                          <input type="submit">
+                          <input type="hidden" name="shift[id]" value="<%= params['id'] %>">
+                          <% end %>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- weather panel footer-->
+            <div class="panel-footer" id="profile_panel_footer">
+              <a href="mailto:email@example.com?Subject=Bike/Ped%20Count" target="_top" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">
+                <i class="glyphicon glyphicon-envelope"></i>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

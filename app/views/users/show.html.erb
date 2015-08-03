@@ -57,7 +57,7 @@
                       <% counts.each do |a| %>
                         <% count_location = Location.find(a.location_id) %>
                         <p>
-                          <a href="shifts/<%= a.id %>"><%= count_location.location_name %></a> from
+                          <a href="shifts/<%= a.id %>/weather"><%= count_location.location_name %></a> from
                           <%= a.start_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %> to <%= a.end_time.localtime.strftime("%a, %b %d %Y, %I:%M %P") %>  <a href="locations/<%= a.location_id %>">View Map</a>
                         </p>
                       <% end %>
