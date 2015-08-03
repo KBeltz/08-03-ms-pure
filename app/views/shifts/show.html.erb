@@ -58,37 +58,38 @@
 
                 <div class="row">
                   <div class=" col-md-9 col-lg-9 ">
-                    <h3 class="panel-title">Quantity</h3>
-                      <select name="cyclist[quantity]">
-                      <% x = 1 %>
-                        <%= while x != 11 do %>
-                          <option value="<%= x %>">
-                            <%= x %>
-                          </option>
-                          <% x += 1 %>
-                        <% end %>
-                      </select>
-                    <br>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
+                          <h3 class="panel-title">Quantity</h3>
+                            <select name="cyclist[quantity]">
+                            <% x = 1 %>
+                              <%= while x != 11 do %>
+                                <option value="<%= x %>">
+                                  <%= x %>
+                                </option>
+                                <% x += 1 %>
+                              <% end %>
+                            </select>
+                          <br><br>
                           <h3 class="panel-title">Sex</h3><br>
-                          <input id="radio" type="radio" name="cyclist[sex]" value=true> Male<br>
-                          <input id="radio" type="radio" name="cyclist[sex]" value=false> Female<br>
+                            <input id="radio" type="radio" name="cyclist[sex]" value=true> Male<br>
+                            <input id="radio" type="radio" name="cyclist[sex]" value=false> Female<br>
                         </div>
                       </div><!-- Col -->
 
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <h3 class="panel-title">Helmet?</h3><br>
-                          <input id="radio" type="radio" name="cyclist[helmet]" value=true> Yes
-                          <input id="radio" type="radio" name="cyclist[helmet]" value=false> No<br><br>
-                          <h3 class="panel-title">On the sidewalk?</h3><br>
-                          <input id="radio" type="radio" name="cyclist[sidewalk]" value=true> Yes
-                          <input id="radio" type="radio" name="cyclist[sidewalk]" value=false> No<br><br>
-                          <h3 class="panel-title">Going the wrong way?</h3><br>
-                          <input id="radio" type="radio" name="cyclist[wrong_way]" value=true> Yes
-                          <input id="radio" type="radio" name="cyclist[wrong_way]" value=false> No<br>
+                          <h3 class="panel-title">Description</h3><br>
+                            <p>Is the cyclist wearing a helmet?</p>
+                              <input id="radio" type="checkbox" name="cyclist[helmet]" value=true> Yes
+                              <input id="radio" type="checkbox" name="cyclist[helmet]" value=false> No<br><br>
+                            <p>Is the cyclist riding on the sidewalk?</p>
+                              <input id="radio" type="checkbox" name="cyclist[sidewalk]" value=true> Yes
+                              <input id="radio" type="checkbox" name="cyclist[sidewalk]" value=false> No<br><br>
+                            <p>Is the cyclist riding against the flow of traffic?</p>
+                              <input id="radio" type="checkbox" name="cyclist[wrong_way]" value=true> Yes
+                              <input id="radio" type="checkbox" name="cyclist[wrong_way]" value=false> No<br>
                           <input type="hidden" name="shift[id]" value="<%= params['id'] %>">
                         </div>
                       </div><!-- Col -->
@@ -123,33 +124,35 @@
                 <%= form_tag("/pedestrians", method: "post") do %>
                 <div class="row">
                   <div class=" col-md-9 col-lg-9 ">
-                    <h3 class="panel-title">Quantity</h3>
-                      <select name="pedestrian[quantity]">
-                      <% x = 1 %>
-                        <%= while x != 11 do %>
-                          <option value="<%= x %>">
-                            <%= x %>
-                          </option>
-                          <% x += 1 %>
-                        <% end %>
-                      </select>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
+                          <h3 class="panel-title">Quantity</h3>
+                            <select name="pedestrian[quantity]">
+                            <% x = 1 %>
+                              <%= while x != 11 do %>
+                                <option value="<%= x %>">
+                                  <%= x %>
+                                </option>
+                                <% x += 1 %>
+                              <% end %>
+                            </select>
+                          <br><br>
                           <h3 class="panel-title">Sex</h3><br>
-                          <input id="radio" type="radio" name="pedestrian[sex]" value=true> Male<br>
-                          <input id="radio" type="radio" name="pedestrian[sex]" value=false> Female<br>
+                            <input id="radio" type="radio" name="pedestrian[sex]" value=true> Male<br>
+                            <input id="radio" type="radio" name="pedestrian[sex]" value=false> Female<br>
                         </div>
                       </div><!-- Col -->
 
                       <div class="col-sm-6">
                         <div class="form-group">
-                          <h3 class="panel-title">Disabled?</h3><br>
-                          <input id="radio" type="radio" name="pedestrian[disabled]" value=true> Yes
-                          <input id="radio" type="radio" name="pedestrian[disabled]" value=false> No<br><br>
-                          <h3 class="panel-title">Other (rollerblades, segway, etc.)</h3><br>
-                          <input id="radio" type="radio" name="pedestrian[other]" value=true> Yes
-                          <input id="radio" type="radio" name="pedestrian[other]" value=false> No<br>
+                          <h3 class="panel-title">Description</h3><br>
+                            <p>Is the pedestrian disabled?</p><br>
+                              <input id="radio" type="radio" name="pedestrian[disabled]" value=true> Yes
+                              <input id="radio" type="radio" name="pedestrian[disabled]" value=false> No<br><br>
+                            <p>Other (rollerblades, segway, etc.)</p><br>
+                              <input id="radio" type="radio" name="pedestrian[other]" value=true> Yes
+                              <input id="radio" type="radio" name="pedestrian[other]" value=false> No<br>
                           <input type="hidden" name="shift[id]" value="<%= params['id'] %>">
                         </div>
                       </div><!-- Col -->
