@@ -41,18 +41,17 @@ class User < ActiveRecord::Base
   after_create :create_full_name
   before_save :update_full_name
 
-  # TODO In documentaiton, explain why this method is needed. Because it's easy to
-  # foget our motivations for making stuff.
+  # Adds full_name to the database for proper display in ActiveAdmin Rampage filter fields.
   def create_full_name
     self.update(full_name: (first_name + ' ' + last_name))
   end
-
+  # Updates full_name column when first or last name is edited.
   def update_full_name
     self.full_name = first_name + ' ' + last_name
   end
 
 
-  # def display_name
+  # TODO def display_name
   # full_name? test this.
   # end
 

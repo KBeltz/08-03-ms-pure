@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body {
   background-color:  #20B1D2;
@@ -134,14 +134,7 @@ input#radio {
   display: inline;
 }
 
-// TODO Place imports at the very top.
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
-
 $brandBlue: #008CBA;
-
-
-
-
 
 .form-container {
   background: white;
