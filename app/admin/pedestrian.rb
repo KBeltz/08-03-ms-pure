@@ -5,6 +5,10 @@ ActiveAdmin.register Pedestrian do
 
   permit_params :sex, :disabled, :other, :quantity
 
+  filter :sex
+  filter :disabled
+  filter :other
+
   index do
     column :quantity
     column :sex do |cyclist|
