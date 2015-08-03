@@ -70,7 +70,7 @@ label {
 .accordion [type=radio], .accordion [type=checkbox] {
     display:none;
 }
-#accordion label {
+.accordion label {
     display:block;
     font-size:16px;
     line-height:16px;
@@ -82,23 +82,23 @@ label {
     cursor:pointer;
     text-transform:uppercase;
 }
-#accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
+.accordion ul li label:hover, .accordion [type=radio]:checked ~ label, .accordion [type=checkbox]:checked ~ label {
     background:#F39C12;
     color:#FFF;
     text-shadow:1px 1px 1px rgba(0,0,0,0.5)
 }
-#accordion .content {
+.accordion .content {
     padding:0 10px;
     overflow:hidden;
     border:1px solid #fff;
     -webkit-transition: all .5s ease-out;
     -moz-transition: all .5s ease-out;
 }
-#accordion p {
+.accordion p {
     color:#333;
     margin:0 0 10px;
 }
-#accordion h3 {
+.accordion h3 {
     color:#542437;
     padding:0;
     margin:10px 0;
