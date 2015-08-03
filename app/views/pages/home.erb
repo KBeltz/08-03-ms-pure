@@ -18,8 +18,10 @@
           <li><a href="/contact">Get involved</a></li>
           <li class="divider"></li>
           <li><a href=<%= locations_path %>>Locations</a></li>
-          <li class="divider"></li>
-          <li><a href=<%= new_admin_user_session_path %>>Admin login</a></li>
+          <% if !user_signed_in? %>
+            <li class="divider"></li>
+            <li><a href=<%= new_admin_user_session_path %>>Admin login</a></li>
+          <% end %>
         </ul>
       </li>
     </ul>
