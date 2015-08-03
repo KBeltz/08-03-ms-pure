@@ -31,9 +31,27 @@ ActiveAdmin.register Cyclist do
           "Female"
         end
       end
-      row :helmet
-      row :sidewalk
-      row :wrong_way
+      row :helmet do |cyclist|
+        if cyclist.helmet == true
+          "Yes"
+        else
+          "No"
+        end
+      end
+      row :sidewalk do |cyclist|
+        if cyclist.sidewalk == true
+          "Yes"
+        else
+          "No"
+        end
+      end
+      row :wrong_way do |cyclist|
+        if cyclist.sex == true
+          "Yes"
+        else
+          "No"
+        end
+      end
       row :created_at
       row :updated_at
     end
