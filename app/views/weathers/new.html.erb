@@ -53,7 +53,7 @@
                       <div class="text-center">
                         <p class="lead">
                           <%= form_tag("/weather", method: "post") do %>
-                          <select name="weather[weather]">
+                          <select name="weather[id]">
                             <% @weather.each do |weather| %>
                             <option value="<%= weather.id %>"><%= weather.weather %></option>
                             <% end %>
