@@ -8,6 +8,17 @@ ActiveAdmin.register Shift do
   filter :location_id, :as => :select
   filter :weather_id, :as => :select
 
+  index do
+    column "Volunteer", :user_id do |user|
+      volunteer = User.find(user.user_id)
+      volunteer.full_name
+    end
+    column :location_id
+    column :weather_id
+    column "Shift Start Time", :start_time
+    actions
+  end
+
   form do |f|
     f.inputs do
       f.input :user
