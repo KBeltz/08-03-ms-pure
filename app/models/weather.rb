@@ -8,6 +8,7 @@
 
 class Weather < ActiveRecord::Base
   validates :weather, presence: true
+  # TODO: db relationship?
 
   def display_name
     self.weather
