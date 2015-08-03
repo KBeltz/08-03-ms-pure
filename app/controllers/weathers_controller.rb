@@ -1,3 +1,5 @@
+# TODO Remove irrelevant code that scaffold-generator gave you.
+
 class WeathersController < ApplicationController
 
   def index

@@ -1,3 +1,6 @@
+/* TODO Maybe remove this entirely? It probably conflicts with your own CSS. */
+/* And it DEFINITELY conflicts with Bootstrap. */
+
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {

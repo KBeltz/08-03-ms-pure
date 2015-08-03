@@ -1,3 +1,5 @@
+# TODO Remove irrelevant code that scaffold-generator gave you.
+
 class CyclistsController < ApplicationController
   before_action :set_cyclist, only: [:show, :edit, :update, :destroy]
 
