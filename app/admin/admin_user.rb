@@ -1,5 +1,6 @@
 ActiveAdmin.register AdminUser do
   menu priority: 2
+  config.sort_order = 'id_asc'
   permit_params :email, :password, :password_confirmation
 
   index do

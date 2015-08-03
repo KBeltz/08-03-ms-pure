@@ -10,8 +10,6 @@ ActiveAdmin.register Cyclist do
   filter :sidewalk
   filter :wrong_way
 
-  
-
   index do
     column :quantity
     column :sex do |cyclist|

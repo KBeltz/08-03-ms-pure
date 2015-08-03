@@ -1,13 +1,11 @@
 ActiveAdmin.register Shift do
+  # belongs_to :user
   menu priority: 5
   permit_params :user_id, :location_id, :weather_id, :start_time, :end_time
 
-  filter :weather_id do
-    Weather.find(weather_id)
-
-  end
-  filter :user_id
-  filter :location_id
+  filter :user_id, :as => :select
+  filter :location_id, :as => :select
+  filter :weather_id, :as => :select
 
   form do |f|
     f.inputs do
