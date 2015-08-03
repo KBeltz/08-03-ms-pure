@@ -1,3 +1,5 @@
+# TODO Remove irrelevant code that scaffold-generator gave you.
+
 class UsersController < ApplicationController
   before_action :authenticate_user!
 

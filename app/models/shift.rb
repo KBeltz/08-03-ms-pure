@@ -17,4 +17,6 @@ class Shift < ActiveRecord::Base
   belongs_to :location
   has_many :pedestrians
   has_many :cyclists
+  
+  # TODO Add relationship to Weather.
 end

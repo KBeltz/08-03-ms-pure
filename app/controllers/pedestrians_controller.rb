@@ -1,3 +1,5 @@
+# TODO Remove irrelevant code that scaffold-generator gave you.
+
 class PedestriansController < ApplicationController
   before_action :set_pedestrian, only: [:show, :edit, :update, :destroy]
 

@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-    #@location = Location.find(2)
+    #@location = Location.find(2) # TODO Remove old comments.
   end
 
   private
