@@ -6,7 +6,8 @@ ActiveAdmin.register Cyclist do
 
   permit_params :quantity, :sex, :helmet, :sidewalk, :wrong_way
 
-  filter :sex
+  filter :quantity
+  filter :sex, as: :select, :collection => [["Male", true], ["Female", false]]
   filter :helmet
   filter :sidewalk
   filter :wrong_way

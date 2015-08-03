@@ -6,7 +6,8 @@ ActiveAdmin.register Pedestrian do
 
   permit_params :sex, :disabled, :other, :quantity
 
-  filter :sex
+  filter :quantity
+  filter :sex, as: :select, :collection => [["Male", true], ["Female", false]]
   filter :disabled
   filter :other
 
