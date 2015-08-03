@@ -13,7 +13,10 @@ ActiveAdmin.register Shift do
       volunteer = User.find(user.user_id)
       volunteer.full_name
     end
-    column :location_id
+    column :location_id do |location|
+      place = Location.find(location.location_id)
+      place.location_name
+    end
     column :weather_id
     column "Shift Start Time", :start_time
     actions
