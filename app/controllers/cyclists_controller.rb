@@ -22,7 +22,7 @@ class CyclistsController < ApplicationController
 
     respond_to do |format|
       if @cyclist.save
-        format.html { redirect_to "/shifts/#{params['shift']['id']}", notice: 'Cyclist was successfully created.' }
+        format.html { redirect_to "/shifts/#{params['shift']['id']}", notice: "Cyclist data was successfully submitted at #{Time.now.localtime.strftime("%a, %b %d %Y, %I:%M %P")}." }
         format.json { render :show, status: :created, location: @cyclist }
       else
         format.html { render :new }
