@@ -21,9 +21,9 @@ Rails.application.routes.draw do
 
   get "/profile" => "users#show", :as => "volunteer"
 
-  get "/shift/:id/weather" => "weather#new"
+  get "/shifts/:id/weather" => "weathers#new"
 
-  post "/weather" => "weather#create"
+  post "/weather" => "weathers#create"
 
   resources :cyclists
   resources :pedestrians
