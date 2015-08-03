@@ -11,7 +11,7 @@ class WeathersController < ApplicationController
   def create
     @shift = Shift.find(params["shift"]["id"])
     @shift.weather_id = params["weather"]["id"]
-
+    @shift.save
     redirect_to "/shifts/#{params['shift']['id']}"
   end
 

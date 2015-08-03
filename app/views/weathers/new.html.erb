@@ -48,11 +48,11 @@
                   <h3 class="panel-title">What's the weather for your shift?</h3>
                 </div>
                 <div class="panel-body">
+                  <%= form_tag("/weather", method: "post") do %>
                   <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                       <div class="text-center">
                         <p class="lead">
-                          <%= form_tag("/weather", method: "post") do %>
                           <select name="weather[id]">
                             <% @weather.each do |weather| %>
                             <option value="<%= weather.id %>"><%= weather.weather %></option>
@@ -60,7 +60,6 @@
                           </select>
                           <br><br>
                           <input type="hidden" name="shift[id]" value="<%= params['id'] %>">
-
                         </p>
                       </div>
                     </div>
