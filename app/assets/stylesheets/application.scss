@@ -46,7 +46,9 @@ p.lead {
 }
 
 // accordion
-
+label {
+  display: inherit;
+}
 .accordion {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     margin:0 auto;
