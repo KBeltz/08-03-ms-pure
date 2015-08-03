@@ -19,6 +19,7 @@ class CyclistsController < ApplicationController
   # POST /cyclists.json
   def create
     @cyclist = Cyclist.new(cyclist_params)
+    @cyclist.shift_id = params["shift"]["id"]
 
     respond_to do |format|
       if @cyclist.save
