@@ -67,7 +67,11 @@
 
         <p>
           <strong>Location</strong><br>
+          <% if @location.url.include? "https://" %>
+               <a href="<%= @location.url %>"><img src="<%= @location.map_image_url %>" width="500" alt="Location Map. Click to go to Google Maps."></a>
+              <% else  %>
           <a href="https://<%= @location.url %>"><img src="<%= @location.map_image_url %>" width="500" alt="Location Map. Click to go to Google Maps."></a>
+              <% end %>
         </p>
 
         <p>
