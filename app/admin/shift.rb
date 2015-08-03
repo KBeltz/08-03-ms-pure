@@ -3,9 +3,9 @@ ActiveAdmin.register Shift do
   config.sort_order = 'id_asc'
   permit_params :user_id, :location_id, :weather_id, :start_time, :end_time
 
-  filter :weather_id, as: :select, :collection => Weather.all.map(&:weather)
-  filter :user_id, as: :select, :collection => User.all.map(&:full_name)
-  filter :location_id, as: :select, :collection => Location.all.map(&:location_name)
+  filter :weather_id, as: :check_boxes, :collection => proc { Weather.all }
+  filter :user_id, as: :select, :collection => proc { User.all }
+  filter :location_id, as: :select, :collection => proc { Location.all }
 
   index do
     column "Volunteer", :user_id do |user|
