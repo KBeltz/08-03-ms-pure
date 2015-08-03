@@ -5,6 +5,8 @@ ActiveAdmin.register Cyclist do
 
   permit_params :quantity, :sex, :helmet, :sidewalk, :wrong_way
 
+  filter :sex, :helmet, :sidewalk, :wrong_way
+
   index do
     column :quantity
     column :sex do |cyclist|
