@@ -8,4 +8,8 @@
 
 class Weather < ActiveRecord::Base
   validates :weather, presence: true
+
+  def display_name
+    self.weather
+  end
 end

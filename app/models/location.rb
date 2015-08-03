@@ -16,4 +16,8 @@ class Location < ActiveRecord::Base
   has_many :shifts
 
   mount_uploader :map_image, MapImageUploader
+
+  def display_name
+    self.location_name
+  end
 end
