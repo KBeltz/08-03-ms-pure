@@ -6,6 +6,7 @@ ActiveAdmin.register Pedestrian do
   permit_params :sex, :disabled, :other, :quantity
 
   index do
+    column :quantity
     column :sex do |cyclist|
       if cyclist.sex == true
         "Male"
@@ -23,15 +24,27 @@ ActiveAdmin.register Pedestrian do
     attributes_table do
       row :id
       row :quantity
-      row :sex do |cyclist|
-        if cyclist.sex == true
+      row :sex do |ped|
+        if ped.sex == true
           "Male"
         else
           "Female"
         end
       end
-      row :disabled
-      row :other
+      row :disabled do |ped|
+        if ped.disabled == true
+          "Yes"
+        else
+          "No"
+        end
+      end
+      row :other do |ped|
+        if ped.other == true
+          "Yes"
+        else
+          "No"
+        end
+      end
       row :created_at
       row :updated_at
     end
