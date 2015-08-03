@@ -50,6 +50,7 @@ ActiveAdmin.register Pedestrian do
           "No"
         end
       end
+      row :shift_id
       row :created_at
       row :updated_at
     end
