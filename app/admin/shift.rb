@@ -1,6 +1,7 @@
 ActiveAdmin.register Shift do
   # belongs_to :user
   menu priority: 5
+  config.sort_order = 'id_asc'
   permit_params :user_id, :location_id, :weather_id, :start_time, :end_time
 
   filter :user_id, :as => :select

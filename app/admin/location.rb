@@ -1,5 +1,6 @@
 ActiveAdmin.register Location do
   menu priority: 4
+  config.sort_order = 'id_asc'
   permit_params :location_name, :url, :map_image, :map_image_cache
 
   filter :location_name

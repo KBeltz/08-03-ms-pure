@@ -1,5 +1,6 @@
 ActiveAdmin.register Weather do
   menu priority: 6, label: "Weather"
+  config.sort_order = 'id_asc'
   permit_params :weather
 
 

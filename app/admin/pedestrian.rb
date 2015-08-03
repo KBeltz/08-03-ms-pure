@@ -1,5 +1,6 @@
 ActiveAdmin.register Pedestrian do
   menu parent: "Count Data"
+  config.sort_order = 'id_asc'
   actions :all, except: [:create, :edit, :destroy, :new]
   batch_action :destroy, false
 
