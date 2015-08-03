@@ -9,6 +9,7 @@
 #  sex        :boolean
 #  disabled   :boolean
 #  other      :boolean
+#  shift_id   :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

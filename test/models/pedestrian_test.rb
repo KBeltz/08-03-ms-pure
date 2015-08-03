@@ -9,6 +9,7 @@
 #  sex        :boolean
 #  disabled   :boolean
 #  other      :boolean
+#  shift_id   :integer
 #
 
 require 'test_helper'

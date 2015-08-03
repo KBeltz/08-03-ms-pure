@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731180035) do
+ActiveRecord::Schema.define(version: 20150803180135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150731180035) do
     t.boolean  "helmet"
     t.boolean  "sidewalk"
     t.boolean  "wrong_way"
+    t.integer  "shift_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150731180035) do
     t.boolean  "sex"
     t.boolean  "disabled"
     t.boolean  "other"
+    t.integer  "shift_id"
   end
 
   create_table "shifts", force: :cascade do |t|

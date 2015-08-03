@@ -10,6 +10,7 @@
 #  helmet     :boolean
 #  sidewalk   :boolean
 #  wrong_way  :boolean
+#  shift_id   :integer
 #
 
 class Cyclist < ActiveRecord::Base
