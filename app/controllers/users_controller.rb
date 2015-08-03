@@ -1,10 +1,5 @@
-# TODO Remove irrelevant code that scaffold-generator gave you.
-
 class UsersController < ApplicationController
   before_action :authenticate_user!
-
-  def index
-  end
 
   # GET /users/1
   # GET /users/1.json

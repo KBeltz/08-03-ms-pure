@@ -1,11 +1,4 @@
-# TODO Remove irrelevant code that scaffold-generator gave you.
-
 class WeathersController < ApplicationController
-
-  def index
-    @weather = Weather.all
-  end
-
   def new
     @weather = Weather.all
   end
@@ -16,6 +9,4 @@ class WeathersController < ApplicationController
     @shift.save
     redirect_to "/shifts/#{params['shift']['id']}"
   end
-
-
 end
