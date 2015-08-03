@@ -4,4 +4,9 @@ class WeathersController < ApplicationController
     @weather = Weather.all
   end
 
+  def new
+    @weather = Weather.all
+  end
+
+
 end
