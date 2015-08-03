@@ -40,19 +40,15 @@
   <h1>Editing User</h1>
 
 
-  <div class="form-container off-canvas">
+  <div class="form-container off-canvas col-xs-4 col-sm-4 col-md-4 col-lg-4">
 
     <%= render 'form' %>
+    <div class="action">
+    <%= link_to 'Show', current_user %> |
+    <%= link_to 'Back', volunteer_path %>
+    </div>
 
 
   </div> <!-- /container -->
-  <%= link_to 'Show', current_user %> |
-  <%= link_to 'Back', volunteer_path %>
-
-
 </div>
 
-
-
-
-</div>
