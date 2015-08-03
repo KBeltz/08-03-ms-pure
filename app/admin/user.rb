@@ -4,12 +4,6 @@ ActiveAdmin.register User do
   actions :all, except: [:edit]
   permit_params :first_name, :last_name, :email, :password
 
-  # sidebar "Shifts" do
-  #   ul do
-  #     li link_to "Shifts", admin_user_shifts_path(user)
-  #   end
-  # end
-
   filter :first_name
   filter :last_name
   filter :email

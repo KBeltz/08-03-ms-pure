@@ -1,12 +1,11 @@
 ActiveAdmin.register Shift do
-  # belongs_to :user
   menu priority: 5
   config.sort_order = 'id_asc'
   permit_params :user_id, :location_id, :weather_id, :start_time, :end_time
 
-  filter :user_id, :as => :select
-  filter :location_id, :as => :select
-  filter :weather_id, :as => :select
+  filter :user_id, label: "Volunteer", as: :select, collection: proc { User.all }
+  filter :location_id, label: "Location", :as => :select, collection: proc { Location.all }
+  filter :weather_id, label: "Weather", :as => :select, collection: proc { Weather.all }
 
   index do
     column "Volunteer", :user_id do |user|
