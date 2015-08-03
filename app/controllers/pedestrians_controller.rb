@@ -19,6 +19,8 @@ class PedestriansController < ApplicationController
   # POST /pedestrians.json
   def create
     @pedestrian = Pedestrian.new(pedestrian_params)
+    @pedestrian.shift_id = params["shift"]["id"]
+    
     respond_to do |format|
       if @pedestrian.save
         format.html { redirect_to "/shifts/#{params['shift']['id']}", notice: "Pedestrian data was successfully submitted at #{Time.now.localtime.strftime("%a, %b %d %Y, %I:%M %P")}." }
