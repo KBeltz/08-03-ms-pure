@@ -49,4 +49,9 @@ class User < ActiveRecord::Base
     self.full_name = first_name + ' ' + last_name
   end
 
+
+  # def display_name
+  # full_name? test this.
+  # end
+
 end
