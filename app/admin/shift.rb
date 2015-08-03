@@ -17,7 +17,14 @@ ActiveAdmin.register Shift do
       place = Location.find(location.location_id)
       place.location_name
     end
-    column :weather_id
+    column :weather_id do |w|
+      if w.weather_id == nil
+        "Weather not yet entered"
+      else
+        forecast = Weather.find(w.weather_id)
+        forecast.weather
+      end
+    end
     column "Shift Start Time", :start_time
     actions
   end
