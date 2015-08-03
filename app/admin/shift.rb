@@ -2,12 +2,9 @@ ActiveAdmin.register Shift do
   menu priority: 5
   permit_params :user_id, :location_id, :weather_id, :start_time, :end_time
 
-  filter :weather_id do
-    Weather.find(weather_id)
-
-  end
-  filter :user_id
-  filter :location_id
+  filter :weather_id, as: :select, :collection => Weather.all.map(&:weather)
+  filter :user_id, as: :select, :collection => User.all.map(&:full_name)
+  filter :location_id, as: :select, :collection => Location.all.map(&:location_name)
 
   form do |f|
     f.inputs do
