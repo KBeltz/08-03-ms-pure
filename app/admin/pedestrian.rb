@@ -3,9 +3,10 @@ ActiveAdmin.register Pedestrian do
   actions :all, except: [:create, :edit, :destroy, :new]
   batch_action :destroy, false
 
-  permit_params :sex, :disabled, :other
+  permit_params :sex, :disabled, :other, :quantity
 
   index do
+    column :quantity
     column :sex do |cyclist|
       if cyclist.sex == true
         "Male"
@@ -17,6 +18,36 @@ ActiveAdmin.register Pedestrian do
     column :other
     # reinstates default actions that are removed when a view is customized
     actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :quantity
+      row :sex do |ped|
+        if ped.sex == true
+          "Male"
+        else
+          "Female"
+        end
+      end
+      row :disabled do |ped|
+        if ped.disabled == true
+          "Yes"
+        else
+          "No"
+        end
+      end
+      row :other do |ped|
+        if ped.other == true
+          "Yes"
+        else
+          "No"
+        end
+      end
+      row :created_at
+      row :updated_at
+    end
   end
 
 
