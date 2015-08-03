@@ -75,4 +75,6 @@ group :development do
 
   # Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
   gem 'annotate', '~> 2.6.10'
+  
+  gem "rails-erd"
 end

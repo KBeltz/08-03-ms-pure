@@ -41,6 +41,8 @@ class User < ActiveRecord::Base
   after_create :create_full_name
   before_save :update_full_name
 
+  # TODO In documentaiton, explain why this method is needed. Because it's easy to
+  # foget our motivations for making stuff.
   def create_full_name
     self.update(full_name: (first_name + ' ' + last_name))
   end
